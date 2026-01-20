@@ -18,6 +18,8 @@
             --folder-alex: #e3f2fd; /* Light Blue */
             --folder-elena: #f3e5f5; /* Light Purple */
             --folder-sarah: #e0f2f1; /* Light Teal - New Client */
+            --folder-yoshita: #fff3e0; /* Warm muted sand - New Client */
+            --folder-mira: #e8f4ff; /* Cool pale blue - Client 05 */
         }
 
         * { box-sizing: border-box; }
@@ -53,7 +55,7 @@
         }
 
         .db-title {
-            color: #eceff1; font-family: 'Courier New', monospace; 
+            color: #eceff1; font-family: 'Courier New', monospace;
             font-size: 2em; margin-bottom: 40px; letter-spacing: 3px;
             border-bottom: 2px solid #546e7a; padding-bottom: 10px;
             text-transform: uppercase; text-align: center;
@@ -91,10 +93,12 @@
             border-right: 1px solid rgba(255,255,255,0.2);
         }
         .folder:hover { transform: translateY(-10px); filter: brightness(1.05); box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
-        
+
         .folder.alex { background: var(--folder-alex); }
         .folder.elena { background: var(--folder-elena); }
         .folder.sarah { background: var(--folder-sarah); }
+        .folder.yoshita { background: var(--folder-yoshita); }
+        .folder.mira { background: var(--folder-mira); }
 
         .folder-label {
             font-family: 'Courier New', monospace; font-weight: bold;
@@ -153,7 +157,7 @@
         .session-btn:hover:not(.locked) { background: #fff; border-left-color: var(--accent); transform: translateX(3px); }
         .s-name { display: block; font-weight: bold; color: #333; font-family: 'Courier New', monospace; font-size: 0.95em; }
         .s-desc { font-size: 0.8em; color: #666; display: block; margin-top: 2px; }
-        
+
         .session-btn.locked {
             opacity: 0.6; cursor: not-allowed; background: #eee; border-left-color: #999;
         }
@@ -277,15 +281,15 @@
         /* Keywords */
         .keyword { padding: 0 2px; border-radius: 2px; transition: 0.2s; }
         .keyword.hidden { color: inherit; cursor: default; }
-        .keyword.revealed { 
-            background: rgba(251, 192, 45, 0.2); 
-            border-bottom: 2px solid var(--highlight); 
-            cursor: pointer; font-weight: 600; 
+        .keyword.revealed {
+            background: rgba(251, 192, 45, 0.2);
+            border-bottom: 2px solid var(--highlight);
+            cursor: pointer; font-weight: 600;
         }
         .keyword.revealed:hover { background: rgba(251, 192, 45, 0.5); }
-        .keyword.collected { 
-            background: transparent; border-bottom: 1px dashed #bdbdbd; 
-            color: #90a4ae; cursor: default; font-weight: normal; 
+        .keyword.collected {
+            background: transparent; border-bottom: 1px dashed #bdbdbd;
+            color: #90a4ae; cursor: default; font-weight: normal;
         }
 
         /* OVERLAYS */
@@ -308,11 +312,11 @@
             text-align: center; padding: 20px;
         }
         .rotate-icon { font-size: 40px; margin-bottom: 15px; animation: rotatePhone 2s infinite ease-in-out; }
-        
-        @keyframes rotatePhone { 
-            0%, 10% { transform: rotate(0deg); opacity: 1; } 
-            40%, 60% { transform: rotate(-90deg); opacity: 1; } 
-            100% { transform: rotate(-90deg); opacity: 0; } 
+
+        @keyframes rotatePhone {
+            0%, 10% { transform: rotate(0deg); opacity: 1; }
+            40%, 60% { transform: rotate(-90deg); opacity: 1; }
+            100% { transform: rotate(-90deg); opacity: 0; }
         }
 
         /* PORTRAIT LOCK ON MOBILE */
@@ -324,59 +328,59 @@
         /* --- MOBILE LANDSCAPE OPTIMIZATIONS --- */
         @media (max-height: 500px) and (orientation: landscape) {
             body { font-size: 13px; }
-            
+
             .app-container { flex-direction: row; align-items: stretch; }
-            
+
             /* Left Chat Panel */
-            .chat-panel { 
-                flex: 2; 
+            .chat-panel {
+                flex: 2;
                 border-right: 2px solid #ddd;
             }
-            .top-bar { 
-                height: 35px; 
-                padding: 0 10px; 
+            .top-bar {
+                height: 35px;
+                padding: 0 10px;
             }
             .avatar { width: 24px; height: 24px; font-size: 0.7em; }
             .info h3 { font-size: 0.85em; display: inline-block; margin-right: 5px;}
             .info span { display: inline-block; font-size: 0.7em; }
             .trust-meter { display: flex; align-items: center; gap: 5px; }
             .trust-label { margin-bottom: 0; font-size: 0.6em; }
-            
+
             .chat-log { padding: 10px; }
             .msg { margin-bottom: 8px; font-size: 0.9em; max-width: 90%; }
-            
-            .input-area { 
-                padding: 5px 10px; 
+
+            .input-area {
+                padding: 5px 10px;
                 min-height: auto;
             }
             .choices { gap: 5px; }
             .choice-btn { padding: 6px 8px; font-size: 0.8em; min-height: 35px; }
 
             /* Right Notebook Panel */
-            .notebook-panel { 
-                flex: 1; 
-                max-width: 35%; 
-                padding: 8px; 
-                background: #fffdeb; 
+            .notebook-panel {
+                flex: 1;
+                max-width: 35%;
+                padding: 8px;
+                background: #fffdeb;
             }
             .notebook-title { margin-bottom: 5px; padding-bottom: 2px; font-size: 0.85em; }
-            
-            .clue-zone { 
-                gap: 4px; 
-                flex-grow: 1; 
+
+            .clue-zone {
+                gap: 4px;
+                flex-grow: 1;
                 max-height: 50%;
                 margin-bottom: 5px;
             }
             .clue-card { padding: 4px 6px; font-size: 0.75em; }
-            
+
             .formulation-zone { padding-top: 5px; margin-top: auto; }
             .insight-list { margin-bottom: 5px; }
             .insight-item { font-size: 0.75em; margin-bottom: 2px; }
-            
-            .btn-action { 
-                padding: 6px; 
-                margin-bottom: 3px; 
-                font-size: 0.75em; 
+
+            .btn-action {
+                padding: 6px;
+                margin-bottom: 3px;
+                font-size: 0.75em;
             }
 
             /* Modals */
@@ -426,6 +430,16 @@
                 <div class="folder-icon">📂</div>
                 <div class="folder-status">STATUS: NEW</div>
                 <div class="folder-label">03: SARAH T.</div>
+            </div>
+            <div class="folder yoshita" onclick="showClientMenu('yoshita')">
+                <div class="folder-icon">📂</div>
+                <div class="folder-status">STATUS: NEW</div>
+                <div class="folder-label">04: YOSHITA</div>
+            </div>
+            <div class="folder mira" onclick="showClientMenu('mira')">
+                <div class="folder-icon">📂</div>
+                <div class="folder-status">STATUS: NEW</div>
+                <div class="folder-label">05: MIRA</div>
             </div>
         </div>
     </div>
@@ -493,77 +507,77 @@
                 briefing: "<p><strong>Subject:</strong> Alex M. (28)<br><strong>Notes:</strong> Defensive, perfectionist. Reports panic attack during review.</p><p><strong>Goal:</strong> Find the roots of his workplace anxiety.</p>",
                 trust: 3,
                 script: [
-                    { 
-                        text: "I shouldn't be here. It’s just a job. People get mad at work, right? It’s not a 'clinical issue'.", 
-                        keywords: [], 
+                    {
+                        text: "I shouldn't be here. It’s just a job. People get mad at work, right? It’s not a 'clinical issue'.",
+                        keywords: [],
                         choices: [
-                            {text:"You seem defensive. What are you afraid of admitting?", change:-1}, 
-                            {text:"It sounds like you're trying to minimize what happened.", change:0}, 
+                            {text:"You seem defensive. What are you afraid of admitting?", change:-1},
+                            {text:"It sounds like you're trying to minimize what happened.", change:0},
                             {text:"You're right, work is stressful. But something must feel different this time.", change:1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "It wasn't just a typical day. It was my annual <span class='keyword' data-key='Performance Review'>Performance Review</span>. I walked in there knowing my numbers were perfect. I needed that validation.", 
-                        keywords:["Performance Review"], 
+                    {
+                        text: "It wasn't just a typical day. It was my annual <span class='keyword' data-key='Performance Review'>Performance Review</span>. I walked in there knowing my numbers were perfect. I needed that validation.",
+                        keywords:["Performance Review"],
                         choices: [
-                            {text:"Did you get the validation you wanted?", change:0}, 
-                            {text:"Why is validation so important to you? Are you insecure?", change:-1}, 
+                            {text:"Did you get the validation you wanted?", change:0},
+                            {text:"Why is validation so important to you? Are you insecure?", change:-1},
                             {text:"So it wasn't just a meeting. It was a judgment day.", change:1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "Exactly. But Halloway... he didn't say a word. He just sat there, reading my file in total <span class='keyword' data-key='Silence'>Silence</span>. He didn't even offer me a chair.", 
-                        keywords:["Silence"], 
+                    {
+                        text: "Exactly. But Halloway... he didn't say a word. He just sat there, reading my file in total <span class='keyword' data-key='Silence'>Silence</span>. He didn't even offer me a chair.",
+                        keywords:["Silence"],
                         choices: [
-                            {text:"That silence must have felt incredibly heavy.", change:1}, 
-                            {text:"He sounds like a rude boss.", change:0}, 
+                            {text:"That silence must have felt incredibly heavy.", change:1},
+                            {text:"He sounds like a rude boss.", change:0},
                             {text:"What did you do during the silence? Did you speak?", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "Speak? I felt <span class='keyword' data-key='Frozen'>Frozen</span>. My hands started shaking. I’m a 28-year-old architect, and I couldn't breathe.", 
-                        keywords:["Frozen"], 
+                    {
+                        text: "Speak? I felt <span class='keyword' data-key='Frozen'>Frozen</span>. My hands started shaking. I’m a 28-year-old architect, and I couldn't breathe.",
+                        keywords:["Frozen"],
                         choices: [
-                            {text:"You were having a panic attack.", change:-1}, 
-                            {text:"Your body was reacting to a threat.", change:1}, 
+                            {text:"You were having a panic attack.", change:-1},
+                            {text:"Your body was reacting to a threat.", change:1},
                             {text:"That sounds frightening.", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I felt... <span class='keyword' data-key='Small'>Small</span>. That's the only word for it. Like I’d shrunk down to nothing. Powerless.", 
-                        keywords:["Small"], 
+                    {
+                        text: "I felt... <span class='keyword' data-key='Small'>Small</span>. That's the only word for it. Like I’d shrunk down to nothing. Powerless.",
+                        keywords:["Small"],
                         choices: [
-                            {text:"Small like a child?", change:1}, 
-                            {text:"Powerless in what way?", change:0}, 
+                            {text:"Small like a child?", change:1},
+                            {text:"Powerless in what way?", change:0},
                             {text:"You shouldn't let him make you feel that way.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "Then he looked over his glasses. My <span class='keyword' data-key='Boss'>Boss</span> has this specific look of disappointment. That's when I snapped.", 
-                        keywords:["Boss"], 
+                    {
+                        text: "Then he looked over his glasses. My <span class='keyword' data-key='Boss'>Boss</span> has this specific look of disappointment. That's when I snapped.",
+                        keywords:["Boss"],
                         choices: [
-                            {text:"The disappointment was the trigger.", change:1}, 
-                            {text:"So you got angry at his face?", change:-1}, 
+                            {text:"The disappointment was the trigger.", change:1},
+                            {text:"So you got angry at his face?", change:-1},
                             {text:"Tell me more about the look.", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "It’s weird. When I think about that look, I don't see the office. I see our old <span class='keyword' data-key='Kitchen Table'>Kitchen Table</span>.", 
-                        keywords:["Kitchen Table"], 
+                    {
+                        text: "It’s weird. When I think about that look, I don't see the office. I see our old <span class='keyword' data-key='Kitchen Table'>Kitchen Table</span>.",
+                        keywords:["Kitchen Table"],
                         choices: [
-                            {text:"Stay with that image. What's happening at the table?", change:1}, 
-                            {text:"Why a kitchen table?", change:0}, 
+                            {text:"Stay with that image. What's happening at the table?", change:1},
+                            {text:"Why a kitchen table?", change:0},
                             {text:"That seems irrelevant.", change:-2}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I'm sitting there. Waiting for my <span class='keyword' data-key='Father'>Father</span>. He’s reviewing my <span class='keyword' data-key='Grades'>Grades</span>. If I got a B, he wouldn't yell. He’d just give me that exact same look.", 
-                        keywords:["Father","Grades"], 
+                    {
+                        text: "I'm sitting there. Waiting for my <span class='keyword' data-key='Father'>Father</span>. He’s reviewing my <span class='keyword' data-key='Grades'>Grades</span>. If I got a B, he wouldn't yell. He’d just give me that exact same look.",
+                        keywords:["Father","Grades"],
                         choices: [
-                            {text:"And in that moment, your boss became your father.", change:2}, 
-                            {text:"Your father sounds strict.", change:0}, 
+                            {text:"And in that moment, your boss became your father.", change:2},
+                            {text:"Your father sounds strict.", change:0},
                             {text:"So you have daddy issues?", change:-3}
-                        ] 
+                        ]
                     }
                 ],
                 formulation: [
@@ -578,50 +592,50 @@
                 briefing: "<p><strong>Update:</strong> 1 Week Later. Alex has missed work for 3 days.</p><p><strong>Goal:</strong> Address his avoidance and shame cycle.</p><p><strong>Warning:</strong> Rapport is low (2/5).</p>",
                 trust: 2,
                 script: [
-                    { 
-                        text: "So... I didn't go back. I haven't been to the office since we spoke. I know, I know. I failed.", 
-                        keywords: [], 
+                    {
+                        text: "So... I didn't go back. I haven't been to the office since we spoke. I know, I know. I failed.",
+                        keywords: [],
                         choices: [
-                            {text:"You didn't fail, Alex. You're coping.", change:1}, 
-                            {text:"Why did you avoid going in?", change:-1}, 
+                            {text:"You didn't fail, Alex. You're coping.", change:1},
+                            {text:"Why did you avoid going in?", change:-1},
                             {text:"Let's talk about what happened instead.", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I called in and took <span class='keyword' data-key='Sick Leave'>Sick Leave</span>. As soon as I hung up the phone, I felt this massive wave of <span class='keyword' data-key='Relief'>Relief</span>.", 
-                        keywords:["Sick Leave","Relief"], 
+                    {
+                        text: "I called in and took <span class='keyword' data-key='Sick Leave'>Sick Leave</span>. As soon as I hung up the phone, I felt this massive wave of <span class='keyword' data-key='Relief'>Relief</span>.",
+                        keywords:["Sick Leave","Relief"],
                         choices: [
-                            {text:"That relief is very seductive, isn't it?", change:1}, 
-                            {text:"Of course you felt relief, you ran away.", change:-2}, 
+                            {text:"That relief is very seductive, isn't it?", change:1},
+                            {text:"Of course you felt relief, you ran away.", change:-2},
                             {text:"How long did the relief last?", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "Yeah, but then the guilt set in. I tried to write an apology email. I have this <span class='keyword' data-key='Unsent Draft'>Unsent Draft</span> sitting on my screen for three days.", 
-                        keywords:["Unsent Draft"], 
+                    {
+                        text: "Yeah, but then the guilt set in. I tried to write an apology email. I have this <span class='keyword' data-key='Unsent Draft'>Unsent Draft</span> sitting on my screen for three days.",
+                        keywords:["Unsent Draft"],
                         choices: [
-                            {text:"What stops you from hitting send?", change:0}, 
-                            {text:"You should just send it and get it over with.", change:-1}, 
+                            {text:"What stops you from hitting send?", change:0},
+                            {text:"You should just send it and get it over with.", change:-1},
                             {text:"It sits there like an accusation.", change:1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "Exactly. Every time I try to finish it, I hear my <span class='keyword' data-key='Fathers Voice'>Fathers Voice</span>. 'Don't make excuses, Alex. Do it right or don't do it at all.'", 
-                        keywords:["Fathers Voice"], 
+                    {
+                        text: "Exactly. Every time I try to finish it, I hear my <span class='keyword' data-key='Fathers Voice'>Fathers Voice</span>. 'Don't make excuses, Alex. Do it right or don't do it at all.'",
+                        keywords:["Fathers Voice"],
                         choices: [
-                            {text:"He's still criticizing you, even in your own head.", change:1}, 
-                            {text:"Your father isn't reading the email, Alex.", change:0}, 
+                            {text:"He's still criticizing you, even in your own head.", change:1},
+                            {text:"Your father isn't reading the email, Alex.", change:0},
                             {text:"You need to ignore that voice.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I look in the <span class='keyword' data-key='Mirror'>Mirror</span> and I don't see an architect. I just see a <span class='keyword' data-key='Coward'>Coward</span>. A little boy hiding under the covers.", 
-                        keywords:["Mirror","Coward"], 
+                    {
+                        text: "I look in the <span class='keyword' data-key='Mirror'>Mirror</span> and I don't see an architect. I just see a <span class='keyword' data-key='Coward'>Coward</span>. A little boy hiding under the covers.",
+                        keywords:["Mirror","Coward"],
                         choices: [
-                            {text:"That label 'coward' is very harsh.", change:0}, 
-                            {text:"You are protecting yourself, not hiding.", change:2}, 
+                            {text:"That label 'coward' is very harsh.", change:0},
+                            {text:"You are protecting yourself, not hiding.", change:2},
                             {text:"Well, hiding won't solve anything.", change:-2}
-                        ] 
+                        ]
                     },
                     {
                         text: "Maybe I should just quit. Start over somewhere where nobody knows I'm a fraud.",
@@ -629,7 +643,7 @@
                         choices: [
                             { text: "Running away creates a new cycle.", change: 1 },
                             { text: "That seems drastic.", change: 0 },
-                            { text: "And prove your father right?", change: -3 } 
+                            { text: "And prove your father right?", change: -3 }
                         ]
                     }
                 ],
@@ -645,50 +659,50 @@
                 briefing: "<p><strong>Update:</strong> 2 Weeks Later. Alex returned to work but feels humiliated.</p><p><strong>Goal:</strong> Navigate his hostility and projection.</p><p><strong>Warning:</strong> Rapport is Critical (1/5).</p>",
                 trust: 1,
                 script: [
-                    { 
-                        text: "I did what you said. I sent the email. I went back. And you know what? It was a disaster.", 
-                        keywords: [], 
+                    {
+                        text: "I did what you said. I sent the email. I went back. And you know what? It was a disaster.",
+                        keywords: [],
                         choices: [
-                            {text:"I'm sorry it didn't go well.", change:0}, 
-                            {text:"Tell me what happened.", change:1}, 
+                            {text:"I'm sorry it didn't go well.", change:0},
+                            {text:"Tell me what happened.", change:1},
                             {text:"You can't blame me for the outcome.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "Oh, I can blame you. Halloway read my <span class='keyword' data-key='Apology'>Apology</span>, smiled, and then thanked me for being honest. Then he took me off the Skyline Project. Effectively a <span class='keyword' data-key='Demotion'>Demotion</span>.", 
-                        keywords:["Apology","Demotion"], 
+                    {
+                        text: "Oh, I can blame you. Halloway read my <span class='keyword' data-key='Apology'>Apology</span>, smiled, and then thanked me for being honest. Then he took me off the Skyline Project. Effectively a <span class='keyword' data-key='Demotion'>Demotion</span>.",
+                        keywords:["Apology","Demotion"],
                         choices: [
-                            {text:"That sounds incredibly frustrating.", change:0}, 
-                            {text:"You feel punished for doing the right thing.", change:1}, 
+                            {text:"That sounds incredibly frustrating.", change:0},
+                            {text:"You feel punished for doing the right thing.", change:1},
                             {text:"He probably did it to reduce your stress.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "It's worse than punishment. He treated me with <span class='keyword' data-key='Kindness'>Kindness</span>. It felt like <span class='keyword' data-key='Pity'>Pity</span>.", 
-                        keywords:["Kindness","Pity"], 
+                    {
+                        text: "It's worse than punishment. He treated me with <span class='keyword' data-key='Kindness'>Kindness</span>. It felt like <span class='keyword' data-key='Pity'>Pity</span>.",
+                        keywords:["Kindness","Pity"],
                         choices: [
-                            {text:"Why does kindness feel dangerous to you?", change:0}, 
-                            {text:"You'd prefer he was angry.", change:1}, 
+                            {text:"Why does kindness feel dangerous to you?", change:0},
+                            {text:"You'd prefer he was angry.", change:1},
                             {text:"You should be grateful he wasn't angry.", change:-2}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I'd prefer he screamed! At least that's real. This? Everyone walking on eggshells... I can hear the <span class='keyword' data-key='Whispers'>Whispers</span>. 'Alex is <span class='keyword' data-key='Fragile'>Fragile</span>'.", 
-                        keywords: ["Whispers", "Fragile"], 
+                    {
+                        text: "I'd prefer he screamed! At least that's real. This? Everyone walking on eggshells... I can hear the <span class='keyword' data-key='Whispers'>Whispers</span>. 'Alex is <span class='keyword' data-key='Fragile'>Fragile</span>'.",
+                        keywords: ["Whispers", "Fragile"],
                         choices: [
-                            {text: "Are they actually whispering, or does it just feel that way?", change: -1}, 
-                            {text: "It feels like you've been labelled.", change: 1}, 
+                            {text: "Are they actually whispering, or does it just feel that way?", change: -1},
+                            {text: "It feels like you've been labelled.", change: 1},
                             {text: "You are feeling very exposed.", change: 0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I am exposed! I showed weakness, and now I'm paying for it. That's why I'm full of <span class='keyword' data-key='Anger'>Anger</span>. It's the only <span class='keyword' data-key='Shield'>Shield</span> I have left.", 
-                        keywords:["Anger","Shield"], 
+                    {
+                        text: "I am exposed! I showed weakness, and now I'm paying for it. That's why I'm full of <span class='keyword' data-key='Anger'>Anger</span>. It's the only <span class='keyword' data-key='Shield'>Shield</span> I have left.",
+                        keywords:["Anger","Shield"],
                         choices: [
-                            {text:"The anger protects you from feeling the hurt.", change:2}, 
-                            {text:"You need to let go of the anger.", change:-1}, 
+                            {text:"The anger protects you from feeling the hurt.", change:2},
+                            {text:"You need to let go of the anger.", change:-1},
                             {text:"Shield against what?", change:0}
-                        ] 
+                        ]
                     },
                     {
                         text: "If I hadn't listened to you, I'd still have my pride. Now I'm just the broken guy in the corner office.",
@@ -712,41 +726,41 @@
                 briefing: "<p><strong>Update:</strong> Season Finale. The boss needs Alex back for a crisis.</p><p><strong>Goal:</strong> Help Alex set boundaries instead of overworking.</p>",
                 trust: 3,
                 script: [
-                    { 
-                        text: "They called me. Halloway called me personally. The Skyline project is a disaster without me. He needs me back.", 
-                        keywords: [], 
+                    {
+                        text: "They called me. Halloway called me personally. The Skyline project is a disaster without me. He needs me back.",
+                        keywords: [],
                         choices: [
-                            {text:"Be careful with that 'Hero' label.", change:0}, 
-                            {text:"So you want to save them?", change:1}, 
+                            {text:"Be careful with that 'Hero' label.", change:0},
+                            {text:"So you want to save them?", change:1},
                             {text:"You are finally getting the respect you deserve.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "It feels like... justice. It's an <span class='keyword' data-key='Emergency'>Emergency</span> now. They realized I'm the only one who can be the <span class='keyword' data-key='Hero'>Hero</span> of this story.", 
-                        keywords:["Emergency","Hero"], 
+                    {
+                        text: "It feels like... justice. It's an <span class='keyword' data-key='Emergency'>Emergency</span> now. They realized I'm the only one who can be the <span class='keyword' data-key='Hero'>Hero</span> of this story.",
+                        keywords:["Emergency","Hero"],
                         choices: [
-                            {text:"Be careful with that 'Hero' label.", change:0}, 
-                            {text:"So you want to save them?", change:1}, 
+                            {text:"Be careful with that 'Hero' label.", change:0},
+                            {text:"So you want to save them?", change:1},
                             {text:"You are finally getting the respect you deserve.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I have to save them. I told Halloway I'd come in tonight. I'm going to pull an <span class='keyword' data-key='All-Nighter'>All-Nighter</span>. Fix the whole structural plan by morning.", 
-                        keywords:["All-Nighter"], 
+                    {
+                        text: "I have to save them. I told Halloway I'd come in tonight. I'm going to pull an <span class='keyword' data-key='All-Nighter'>All-Nighter</span>. Fix the whole structural plan by morning.",
+                        keywords:["All-Nighter"],
                         choices: [
-                            { text: "Wow, that is dedication.", change: -2 }, 
+                            { text: "Wow, that is dedication.", change: -2 },
                             { text: "Is that strictly necessary?", change: 0 },
                             { text: "That sounds like the old pattern talking.", change: 1 }
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "What choice do I have? If I don't give 110%, I'm just an employee. If I do this, I prove I'm indispensable. I can ignore the <span class='keyword' data-key='Burnout'>Burnout</span>.", 
-                        keywords:["Burnout"], 
+                    {
+                        text: "What choice do I have? If I don't give 110%, I'm just an employee. If I do this, I prove I'm indispensable. I can ignore the <span class='keyword' data-key='Burnout'>Burnout</span>.",
+                        keywords:["Burnout"],
                         choices: [
-                            {text:"You can't ignore the burnout forever.", change:1}, 
-                            {text:"Maybe you should just quit then.", change:-2}, 
+                            {text:"You can't ignore the burnout forever.", change:1},
+                            {text:"Maybe you should just quit then.", change:-2},
                             {text:"It's a tough choice.", change:0}
-                        ] 
+                        ]
                     },
                     {
                         text: "If I don't go back and kill myself working, then I have to quit. Those are the only two options. All or nothing.",
@@ -766,14 +780,14 @@
                             { text: "You are weak if you can't handle it.", change: -3 }
                         ]
                     },
-                    { 
-                        text: "<span class='keyword' data-key='Conditions'>Conditions</span>... like telling him I'll do it, but only if I get a <span class='keyword' data-key='Team'>Team</span>? And no overtime?", 
-                        keywords:["Conditions","Team"], 
+                    {
+                        text: "<span class='keyword' data-key='Conditions'>Conditions</span>... like telling him I'll do it, but only if I get a <span class='keyword' data-key='Team'>Team</span>? And no overtime?",
+                        keywords:["Conditions","Team"],
                         choices: [
-                            {text:"Exactly. You set the terms.", change:2}, 
-                            {text:"He might say no.", change:0}, 
+                            {text:"Exactly. You set the terms.", change:2},
+                            {text:"He might say no.", change:0},
                             {text:"That sounds demanding.", change:-1}
-                        ] 
+                        ]
                     }
                 ],
                 formulation: [
@@ -788,59 +802,59 @@
                 briefing: "<p><strong>Update:</strong> Chapter 2 Start. A birthday phone call reopens old wounds.</p><p><strong>Goal:</strong> Trace the root of conditional love.</p>",
                 trust: 3,
                 script: [
-                    { 
-                        text: "Work is good. The team is actually helping. But... my dad called yesterday. It was my <span class='keyword' data-key='Birthday'>Birthday</span>.", 
-                        keywords:["Birthday"], 
+                    {
+                        text: "Work is good. The team is actually helping. But... my dad called yesterday. It was my <span class='keyword' data-key='Birthday'>Birthday</span>.",
+                        keywords:["Birthday"],
                         choices: [
-                            {text:"That sounds like it should be a happy occasion.", change:0}, 
-                            {text:"How did the call go?", change:1}, 
+                            {text:"That sounds like it should be a happy occasion.", change:0},
+                            {text:"How did the call go?", change:1},
                             {text:"Did he criticize you again?", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "He didn't say happy birthday. He asked if I'd got that promotion yet. When I said no, there was just... <span class='keyword' data-key='Dead Air'>Dead Air</span>. He just breathed on the line.", 
-                        keywords:["Dead Air"], 
+                    {
+                        text: "He didn't say happy birthday. He asked if I'd got that promotion yet. When I said no, there was just... <span class='keyword' data-key='Dead Air'>Dead Air</span>. He just breathed on the line.",
+                        keywords:["Dead Air"],
                         choices: [
-                            {text:"That silence is louder than words.", change:1}, 
-                            {text:"Maybe he just didn't know what to say.", change:-1}, 
+                            {text:"That silence is louder than words.", change:1},
+                            {text:"Maybe he just didn't know what to say.", change:-1},
                             {text:"He sounds like a difficult man.", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "It reminded me of when I was 10. I wanted to be an architect even then. I drew these elaborate <span class='keyword' data-key='Blueprints'>Blueprints</span> for a treehouse.", 
-                        keywords:["Blueprints"], 
+                    {
+                        text: "It reminded me of when I was 10. I wanted to be an architect even then. I drew these elaborate <span class='keyword' data-key='Blueprints'>Blueprints</span> for a treehouse.",
+                        keywords:["Blueprints"],
                         choices: [
-                            {text:"You were ambitious even back then.", change: 1}, 
+                            {text:"You were ambitious even back then.", change: 1},
                             {text:"Tell me about showing them to him.", change: 0},
                             {text:"Did he like them?", change: -1}
-                        ] 
+                        ]
                     },
                     {
                         text: "I showed him. He pointed out a structural flaw. Just one. I felt so stupid. I threw them in the <span class='keyword' data-key='Trash'>Trash</span> immediately.",
                         keywords: ["Trash"],
                         choices: [
-                            {text:"You destroyed your own work before he could?", change:1}, 
-                            {text:"Why did you do that?", change:-1}, 
+                            {text:"You destroyed your own work before he could?", change:1},
+                            {text:"Why did you do that?", change:-1},
                             {text:"That seems like an overreaction.", change:-2}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I tore them up. If it wasn't <span class='keyword' data-key='Perfect'>Perfect</span>, it was garbage. That was the rule in our house.", 
-                        keywords:["Perfect"], 
+                    {
+                        text: "I tore them up. If it wasn't <span class='keyword' data-key='Perfect'>Perfect</span>, it was garbage. That was the rule in our house.",
+                        keywords:["Perfect"],
                         choices: [
                             {text:"A rule he taught you?", change: 0},
                             {text:"That is an impossible standard for a child.", change: 1},
                             {text:"Perfectionism is useful sometimes.", change: -2}
-                        ] 
+                        ]
                     },
                     {
                         text: "He didn't stop me from throwing it away. He just nodded. Like he was teaching me a lesson. That affection is <span class='keyword' data-key='Earned'>Earned</span>. It's not free.",
                         keywords: ["Earned"],
                         choices: [
-                            {text:"And you're still trying to earn it today.", change:2}, 
-                            {text:"That's a cold lesson.", change:0}, 
+                            {text:"And you're still trying to earn it today.", change:2},
+                            {text:"That's a cold lesson.", change:0},
                             {text:"You should call him back and tell him off.", change:-2}
-                        ] 
+                        ]
                     }
                 ],
                 formulation: [
@@ -855,32 +869,32 @@
                 briefing: "<p><strong>Update:</strong> Alex wants to confront his father.</p><p><strong>Goal:</strong> Move from accusation to vulnerability.</p>",
                 trust: 3,
                 script: [
-                    { 
-                        text: "I didn't call him back. I wrote down what I wanted to say in a <span class='keyword' data-key='Script'>Script</span>. But looking at it... it reads like a declaration of war.", 
-                        keywords:["Script"], 
+                    {
+                        text: "I didn't call him back. I wrote down what I wanted to say in a <span class='keyword' data-key='Script'>Script</span>. But looking at it... it reads like a declaration of war.",
+                        keywords:["Script"],
                         choices: [
-                            {text:"Why does honesty feel like war to you?", change:1}, 
-                            {text:"Maybe you are just angry.", change:0}, 
+                            {text:"Why does honesty feel like war to you?", change:1},
+                            {text:"Maybe you are just angry.", change:0},
                             {text:"You should send it anyway.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "If I tell him 'You made me this way,' he'll explode. I can't handle an <span class='keyword' data-key='Explosion'>Explosion</span> right now. He'll cut me off completely.", 
-                        keywords:["Explosion"], 
+                    {
+                        text: "If I tell him 'You made me this way,' he'll explode. I can't handle an <span class='keyword' data-key='Explosion'>Explosion</span> right now. He'll cut me off completely.",
+                        keywords:["Explosion"],
                         choices: [
-                            {text:"So you stay silent to keep the peace.", change:0}, 
-                            {text:"You are predicting a catastrophe to stop yourself from acting.", change:1}, 
+                            {text:"So you stay silent to keep the peace.", change:0},
+                            {text:"You are predicting a catastrophe to stop yourself from acting.", change:1},
                             {text:"Let him explode. You're an adult.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "It's safer to say nothing. When we talk, I just play the role of the 'Good Son'. The real me is <span class='keyword' data-key='Invisible'>Invisible</span>.", 
-                        keywords:["Invisible"], 
+                    {
+                        text: "It's safer to say nothing. When we talk, I just play the role of the 'Good Son'. The real me is <span class='keyword' data-key='Invisible'>Invisible</span>.",
+                        keywords:["Invisible"],
                         choices: [
-                            {text:"Being invisible is safe, but it's lonely.", change:1}, 
-                            {text:"That sounds like a good strategy for now.", change:-1}, 
+                            {text:"Being invisible is safe, but it's lonely.", change:1},
+                            {text:"That sounds like a good strategy for now.", change:-1},
                             {text:"Why do you hide?", change:0}
-                        ] 
+                        ]
                     },
                     {
                         text: "I want him to know. I want him to see the <span class='keyword' data-key='Cost'>Cost</span> of his parenting. The panic attacks. The sleepless nights.",
@@ -889,34 +903,34 @@
                             {text:"You want him to feel your pain.", change:0},
                             {text:"Telling him the cost isn't about blaming him; it's about showing him *you*.", change:1},
                             {text:"He probably won't care.", change:-2}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "But that's a huge <span class='keyword' data-key='Risk'>Risk</span>. If I show him who I am and he rejects me... then I really have no father.", 
-                        keywords:["Risk"], 
+                    {
+                        text: "But that's a huge <span class='keyword' data-key='Risk'>Risk</span>. If I show him who I am and he rejects me... then I really have no father.",
+                        keywords:["Risk"],
                         choices: [
-                            {text:"The risk is real. But so is the distance.", change:1}, 
-                            {text:"You have to take the risk.", change:-1}, 
+                            {text:"The risk is real. But so is the distance.", change:1},
+                            {text:"You have to take the risk.", change:-1},
                             {text:"He won't reject you.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "Maybe... maybe if I don't accuse him. If I just say 'I'm scared of disappointing you.' That could be a <span class='keyword' data-key='Bridge'>Bridge</span> instead of a bomb.", 
-                        keywords:["Bridge"], 
+                    {
+                        text: "Maybe... maybe if I don't accuse him. If I just say 'I'm scared of disappointing you.' That could be a <span class='keyword' data-key='Bridge'>Bridge</span> instead of a bomb.",
+                        keywords:["Bridge"],
                         choices: [
-                            {text:"That is a powerful distinction.", change:2}, 
-                            {text:"Yes, soften the blow.", change:0}, 
+                            {text:"That is a powerful distinction.", change:2},
+                            {text:"Yes, soften the blow.", change:0},
                             {text:"No, you need to be strong, not scared.", change:-2}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I'm going to do it. Not to change him, but just to stop hiding. That's the <span class='keyword' data-key='Truth'>Truth</span>.", 
-                        keywords:["Truth"], 
+                    {
+                        text: "I'm going to do it. Not to change him, but just to stop hiding. That's the <span class='keyword' data-key='Truth'>Truth</span>.",
+                        keywords:["Truth"],
                         choices: [
-                            {text:"The truth sets you free, Alex.", change:1}, 
-                            {text:"Good luck.", change:0}, 
+                            {text:"The truth sets you free, Alex.", change:1},
+                            {text:"Good luck.", change:0},
                             {text:"Make sure you stick to the script.", change:-1}
-                        ] 
+                        ]
                     }
                 ],
                 formulation: [
@@ -931,23 +945,23 @@
                 briefing: "<p><strong>Update:</strong> The call happened. It didn't go perfectly.</p><p><strong>Goal:</strong> Process the reality of his father's limitations.</p>",
                 trust: 3,
                 script: [
-                    { 
-                        text: "I called him. I said everything. I told him how scared I was of failing him.", 
-                        keywords: [], 
+                    {
+                        text: "I called him. I said everything. I told him how scared I was of failing him.",
+                        keywords: [],
                         choices: [
                             { text: "How did he respond?", change: 0 },
                             { text: "You were incredibly brave to do that.", change: 1 },
                             { text: "Did he apologize?", change: -1 }
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "He laughed. A nervous laugh. Then he said, 'I only ever wanted you to be tough, Alex. It's a tough world.' He got <span class='keyword' data-key='Defensive'>Defensive</span>.", 
-                        keywords:["Defensive"], 
+                    {
+                        text: "He laughed. A nervous laugh. Then he said, 'I only ever wanted you to be tough, Alex. It's a tough world.' He got <span class='keyword' data-key='Defensive'>Defensive</span>.",
+                        keywords:["Defensive"],
                         choices: [
-                            {text:"He missed the point entirely.", change:-1}, 
-                            {text:"His defense mechanism kicked in immediately.", change:1}, 
+                            {text:"He missed the point entirely.", change:-1},
+                            {text:"His defense mechanism kicked in immediately.", change:1},
                             {text:"At least he was honest.", change:0}
-                        ] 
+                        ]
                     },
                     {
                         text: "Yeah. He started listing all the things he paid for. College, my car. Like a ledger. He couldn't hear the <span class='keyword' data-key='Emotion'>Emotion</span>.",
@@ -956,34 +970,34 @@
                             {text: "He responds to feelings with facts.", change: 1},
                             {text: "That is so typical of that generation.", change: -1},
                             {text: "It sounds frustrating.", change: 0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I used to think he was this giant, judging god. But listening to him stutter... I just saw a <span class='keyword' data-key='Small Man'>Small Man</span> who doesn't know how to talk to his son.", 
-                        keywords:["Small Man"], 
+                    {
+                        text: "I used to think he was this giant, judging god. But listening to him stutter... I just saw a <span class='keyword' data-key='Small Man'>Small Man</span> who doesn't know how to talk to his son.",
+                        keywords:["Small Man"],
                         choices: [
-                            {text:"The giant has shrunk.", change:2}, 
-                            {text:"He sounds pathetic.", change:-2}, 
+                            {text:"The giant has shrunk.", change:2},
+                            {text:"He sounds pathetic.", change:-2},
                             {text:"That's a big shift in perspective.", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I hung up feeling empty. No big hug. No breakthrough. Just <span class='keyword' data-key='Silence'>Silence</span> again. But it felt different this time.", 
-                        keywords:["Silence"], 
+                    {
+                        text: "I hung up feeling empty. No big hug. No breakthrough. Just <span class='keyword' data-key='Silence'>Silence</span> again. But it felt different this time.",
+                        keywords:["Silence"],
                         choices: [
-                            {text:"Different how?", change:0}, 
-                            {text:"Because this time, you didn't cause it.", change:1}, 
+                            {text:"Different how?", change:0},
+                            {text:"Because this time, you didn't cause it.", change:1},
                             {text:"You should have pushed harder.", change:-2}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "It felt like... it wasn't my fault. He is who he is. I can't change his <span class='keyword' data-key='Limit'>Limit</span>. That's the <span class='keyword' data-key='Reality'>Reality</span>.", 
-                        keywords:["Limit","Reality"], 
+                    {
+                        text: "It felt like... it wasn't my fault. He is who he is. I can't change his <span class='keyword' data-key='Limit'>Limit</span>. That's the <span class='keyword' data-key='Reality'>Reality</span>.",
+                        keywords:["Limit","Reality"],
                         choices: [
-                            {text:"Accepting that reality is painful but necessary.", change:1}, 
-                            {text:"Maybe he will change later.", change:-1}, 
+                            {text:"Accepting that reality is painful but necessary.", change:1},
+                            {text:"Maybe he will change later.", change:-1},
                             {text:"So you're giving up on him?", change:-2}
-                        ] 
+                        ]
                     }
                 ],
                 formulation: [
@@ -998,59 +1012,59 @@
                 briefing: "<p><strong>Update:</strong> Series Finale. Termination session.</p><p><strong>Goal:</strong> Integration and Goodbye.</p>",
                 trust: 4,
                 script: [
-                    { 
-                        text: "It's been a quiet month. No panic attacks. I actually slept through the night last week.", 
-                        keywords: [], 
+                    {
+                        text: "It's been a quiet month. No panic attacks. I actually slept through the night last week.",
+                        keywords: [],
                         choices: [
                             { text: "That is a huge milestone.", change: 1 },
                             { text: "Only one night?", change: -1 },
                             { text: "Sleep is important.", change: 0 }
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I looked at my old <span class='keyword' data-key='Review'>Review</span> notes. The ones that started all this. I realized... Halloway was right about some things.", 
-                        keywords:["Review"], 
+                    {
+                        text: "I looked at my old <span class='keyword' data-key='Review'>Review</span> notes. The ones that started all this. I realized... Halloway was right about some things.",
+                        keywords:["Review"],
                         choices: [
-                            {text:"You can see the feedback objectively now.", change:1}, 
-                            {text:"So you admit you were wrong?", change:-2}, 
+                            {text:"You can see the feedback objectively now.", change:1},
+                            {text:"So you admit you were wrong?", change:-2},
                             {text:"What was he right about?", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "He said I was 'rigid'. He was right. I was trying to control everything because I felt out of <span class='keyword' data-key='Control'>Control</span> inside.", 
-                        keywords:["Control"], 
+                    {
+                        text: "He said I was 'rigid'. He was right. I was trying to control everything because I felt out of <span class='keyword' data-key='Control'>Control</span> inside.",
+                        keywords:["Control"],
                         choices: [
-                            {text:"Rigidity is a armor against chaos.", change:1}, 
-                            {text:"You were a control freak.", change:-2}, 
+                            {text:"Rigidity is a armor against chaos.", change:1},
+                            {text:"You were a control freak.", change:-2},
                             {text:"Control is an illusion.", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I haven't spoken to my dad. I will, eventually. But I'm not bringing my <span class='keyword' data-key='Inner Child'>Inner Child</span> to the phone anymore. Just me.", 
-                        keywords:["Inner Child"], 
+                    {
+                        text: "I haven't spoken to my dad. I will, eventually. But I'm not bringing my <span class='keyword' data-key='Inner Child'>Inner Child</span> to the phone anymore. Just me.",
+                        keywords:["Inner Child"],
                         choices: [
-                            {text:"The adult Alex is handling it.", change:1}, 
-                            {text:"Don't abandon the child completely.", change:0}, 
+                            {text:"The adult Alex is handling it.", change:1},
+                            {text:"Don't abandon the child completely.", change:0},
                             {text:"You sound detached.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I think I'm ready to stop coming here. I have the tools now. I have a new <span class='keyword' data-key='Foundation'>Foundation</span>.", 
-                        keywords:["Foundation"], 
+                    {
+                        text: "I think I'm ready to stop coming here. I have the tools now. I have a new <span class='keyword' data-key='Foundation'>Foundation</span>.",
+                        keywords:["Foundation"],
                         choices: [
-                            {text:"I agree. You are ready.", change:1}, 
-                            {text:"Are you sure? It's been a short time.", change:-1}, 
+                            {text:"I agree. You are ready.", change:1},
+                            {text:"Are you sure? It's been a short time.", change:-1},
                             {text:"We can switch to monthly check-ins.", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "Thank you, Doctor. For helping me see the difference between a boss and a father. It's time for <span class='keyword' data-key='Goodbye'>Goodbye</span>. I'm okay with the <span class='keyword' data-key='Silence'>Silence</span> now.", 
-                        keywords:["Goodbye","Silence"], 
+                    {
+                        text: "Thank you, Doctor. For helping me see the difference between a boss and a father. It's time for <span class='keyword' data-key='Goodbye'>Goodbye</span>. I'm okay with the <span class='keyword' data-key='Silence'>Silence</span> now.",
+                        keywords:["Goodbye","Silence"],
                         choices: [
-                            {text:"You did the hard work, Alex.", change:1}, 
-                            {text:"It's my job.", change:0}, 
+                            {text:"You did the hard work, Alex.", change:1},
+                            {text:"It's my job.", change:0},
                             {text:"Good luck.", change:0}
-                        ] 
+                        ]
                     }
                 ],
                 formulation: [
@@ -1060,7 +1074,7 @@
                 ],
                 outro: "Alex walks out the door. He is no longer seeking permission to exist. Case Closed."
             },
-            
+
             // --- ELENA R (8-15) ---
             {
                 id: 8, client: "Elena R.", title: "The Diet",
@@ -1086,59 +1100,59 @@
                 briefing: "<p><strong>Subject:</strong> Elena R. (20)<br><strong>Timeline:</strong> 1 Week Later.<br><strong>Topic:</strong> Origins.</p><p><strong>Goal:</strong> Identify the specific event that triggered the behavior.</p><p><strong>Warning:</strong> Rapport is Guarded (2/5).</p>",
                 trust: 2,
                 script: [
-                    { 
-                        text: "I thought about what you said. About 'driving the car'. You think I lost control. But I remember exactly when I took the wheel.", 
-                        keywords: [], 
+                    {
+                        text: "I thought about what you said. About 'driving the car'. You think I lost control. But I remember exactly when I took the wheel.",
+                        keywords: [],
                         choices: [
-                            {text:"Tell me about that moment.", change:1}, 
-                            {text:"You're still in denial.", change:-2}, 
+                            {text:"Tell me about that moment.", change:1},
+                            {text:"You're still in denial.", change:-2},
                             {text:"When was this?", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I was 14. The Nutcracker <span class='keyword' data-key='Auditions'>Auditions</span>. I was fitted for the Clara <span class='keyword' data-key='Costume'>Costume</span>. It was beautiful. White <span class='keyword' data-key='Silk'>Silk</span>.", 
-                        keywords: ["Auditions", "Costume", "Silk"], 
+                    {
+                        text: "I was 14. The Nutcracker <span class='keyword' data-key='Auditions'>Auditions</span>. I was fitted for the Clara <span class='keyword' data-key='Costume'>Costume</span>. It was beautiful. White <span class='keyword' data-key='Silk'>Silk</span>.",
+                        keywords: ["Auditions", "Costume", "Silk"],
                         choices: [
-                            {text:"That sounds like a core memory.", change:1}, 
-                            {text:"Did it fit?", change:0}, 
+                            {text:"That sounds like a core memory.", change:1},
+                            {text:"Did it fit?", change:0},
                             {text:"What went wrong?", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "The mistress zipped it up. It was tight. She didn't say anything. She just reached out and did this... <span class='keyword' data-key='Pinch'>Pinch</span>. On my waist.", 
-                        keywords: ["Pinch"], 
+                    {
+                        text: "The mistress zipped it up. It was tight. She didn't say anything. She just reached out and did this... <span class='keyword' data-key='Pinch'>Pinch</span>. On my waist.",
+                        keywords: ["Pinch"],
                         choices: [
-                            {text:"That was a violation of your space.", change:1}, 
-                            {text:"Just a pinch?", change:-1}, 
+                            {text:"That was a violation of your space.", change:1},
+                            {text:"Just a pinch?", change:-1},
                             {text:"How did you react?", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "Everyone saw. The other girls giggled. I burned with shame. That night at dinner, I learned a trick. I used a <span class='keyword' data-key='Napkin'>Napkin</span> to hide the <span class='keyword' data-key='Meat'>Meat</span>.", 
-                        keywords: ["Napkin", "Meat"], 
+                    {
+                        text: "Everyone saw. The other girls giggled. I burned with shame. That night at dinner, I learned a trick. I used a <span class='keyword' data-key='Napkin'>Napkin</span> to hide the <span class='keyword' data-key='Meat'>Meat</span>.",
+                        keywords: ["Napkin", "Meat"],
                         choices: [
-                            {text:"You wanted to disappear.", change:1}, 
+                            {text:"You wanted to disappear.", change:1},
                             {text:"That's a classic trick.", change:-1}, // Too clinical
                             {text:"Did your parents notice?", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "They didn't notice. I drank three glasses of <span class='keyword' data-key='Water'>Water</span> to feel full. It worked. The hunger pangs went away.", 
-                        keywords: ["Water"], 
+                    {
+                        text: "They didn't notice. I drank three glasses of <span class='keyword' data-key='Water'>Water</span> to feel full. It worked. The hunger pangs went away.",
+                        keywords: ["Water"],
                         choices: [
-                            {text:"You numbed the physical sensation.", change:0}, 
-                            {text:"You found a way to cope with the shame.", change:1}, 
+                            {text:"You numbed the physical sensation.", change:0},
+                            {text:"You found a way to cope with the shame.", change:1},
                             {text:"That is very unhealthy.", change:-2}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "The next morning, I woke up with this gnawing <span class='keyword' data-key='Hunger'>Hunger</span>. But I looked in the mirror, and I didn't feel weak. I felt <span class='keyword' data-key='Victory'>Victory</span>.", 
-                        keywords: ["Hunger", "Victory"], 
+                    {
+                        text: "The next morning, I woke up with this gnawing <span class='keyword' data-key='Hunger'>Hunger</span>. But I looked in the mirror, and I didn't feel weak. I felt <span class='keyword' data-key='Victory'>Victory</span>.",
+                        keywords: ["Hunger", "Victory"],
                         choices: [
-                            {text:"The hunger felt like an achievement.", change:2}, 
-                            {text:"That's a dangerous association.", change:-1}, 
+                            {text:"The hunger felt like an achievement.", change:2},
+                            {text:"That's a dangerous association.", change:-1},
                             {text:"Victory over what?", change:0}
-                        ] 
+                        ]
                     }
                 ],
                 formulation: [
@@ -1153,59 +1167,59 @@
                 briefing: "<p><strong>Subject:</strong> Elena R. (20)<br><strong>Timeline:</strong> 1 Week Later.<br><strong>Topic:</strong> The Daily Routine.</p><p><strong>Goal:</strong> Map the rigid system keeping the disorder in place.</p><p><strong>Status:</strong> Rapport is Neutral (3/5).</p>",
                 trust: 3,
                 script: [
-                    { 
-                        text: "It didn't stop with the Nutcracker. That was just the start. Now, my life is... organized.", 
-                        keywords: [], 
+                    {
+                        text: "It didn't stop with the Nutcracker. That was just the start. Now, my life is... organized.",
+                        keywords: [],
                         choices: [
-                            {text:"Organized, or rigid?", change:0}, 
-                            {text:"Tell me about your routine.", change:1}, 
+                            {text:"Organized, or rigid?", change:0},
+                            {text:"Tell me about your routine.", change:1},
                             {text:"You mean obsessive.", change:-2}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I wake up at <span class='keyword' data-key='5 AM'>5 AM</span>. I step on the <span class='keyword' data-key='Scale'>Scale</span>. That little digital <span class='keyword' data-key='Number'>Number</span> decides if I'm allowed to be happy today.", 
-                        keywords: ["5 AM", "Scale", "Number"], 
+                    {
+                        text: "I wake up at <span class='keyword' data-key='5 AM'>5 AM</span>. I step on the <span class='keyword' data-key='Scale'>Scale</span>. That little digital <span class='keyword' data-key='Number'>Number</span> decides if I'm allowed to be happy today.",
+                        keywords: ["5 AM", "Scale", "Number"],
                         choices: [
-                            {text:"You give a machine a lot of power.", change:1}, 
+                            {text:"You give a machine a lot of power.", change:1},
                             {text:"Numbers don't define you.", change:0}, // True but cliché
                             {text:"You should throw the scale away.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "If the number is 'bad', the rules get tighter. No lunch. Only <span class='keyword' data-key='Safe Foods'>Safe Foods</span>. Celery. Black <span class='keyword' data-key='Coffee'>Coffee</span>. Things that don't count.", 
-                        keywords: ["Safe Foods", "Coffee"], 
+                    {
+                        text: "If the number is 'bad', the rules get tighter. No lunch. Only <span class='keyword' data-key='Safe Foods'>Safe Foods</span>. Celery. Black <span class='keyword' data-key='Coffee'>Coffee</span>. Things that don't count.",
+                        keywords: ["Safe Foods", "Coffee"],
                         choices: [
-                            {text:"Safety implies danger. What is dangerous about food?", change:1}, 
-                            {text:"You need protein.", change:-1}, 
+                            {text:"Safety implies danger. What is dangerous about food?", change:1},
+                            {text:"You need protein.", change:-1},
                             {text:"It sounds exhausting.", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "If I slip up... if I eat a <span class='keyword' data-key='Bagel'>Bagel</span>... I feel dirty. Like I'm in <span class='keyword' data-key='Debt'>Debt</span>. I have to pay it back immediately.", 
-                        keywords: ["Bagel", "Debt"], 
+                    {
+                        text: "If I slip up... if I eat a <span class='keyword' data-key='Bagel'>Bagel</span>... I feel dirty. Like I'm in <span class='keyword' data-key='Debt'>Debt</span>. I have to pay it back immediately.",
+                        keywords: ["Bagel", "Debt"],
                         choices: [
-                            {text:"How do you pay it back?", change:0}, 
-                            {text:"Your body isn't a bank.", change:1}, 
+                            {text:"How do you pay it back?", change:0},
+                            {text:"Your body isn't a bank.", change:1},
                             {text:"That's guilt, not debt.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I go <span class='keyword' data-key='Running'>Running</span>. Five miles. Ten. Until the calorie counter hits zero. Until the debt is cleared.", 
-                        keywords: ["Running"], 
+                    {
+                        text: "I go <span class='keyword' data-key='Running'>Running</span>. Five miles. Ten. Until the calorie counter hits zero. Until the debt is cleared.",
+                        keywords: ["Running"],
                         choices: [
-                            {text:"You're using exercise as punishment.", change:1}, 
+                            {text:"You're using exercise as punishment.", change:1},
                             {text:"At least you're active.", change:-2}, // Dangerous validation
                             {text:"That's a lot of running.", change:0}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "It keeps the chaos away. These <span class='keyword' data-key='Rules'>Rules</span>... they protect me. But sometimes, late at night, I feel like I'm in a <span class='keyword' data-key='Cage'>Cage</span>.", 
-                        keywords: ["Rules", "Cage"], 
+                    {
+                        text: "It keeps the chaos away. These <span class='keyword' data-key='Rules'>Rules</span>... they protect me. But sometimes, late at night, I feel like I'm in a <span class='keyword' data-key='Cage'>Cage</span>.",
+                        keywords: ["Rules", "Cage"],
                         choices: [
-                            {text:"The protection has become a prison.", change:2}, 
-                            {text:"You built the cage.", change:-1}, 
+                            {text:"The protection has become a prison.", change:2},
+                            {text:"You built the cage.", change:-1},
                             {text:"Let's talk about unlocking it.", change:1}
-                        ] 
+                        ]
                     }
                 ],
                 formulation: [
@@ -1220,59 +1234,59 @@
                 briefing: "<p><strong>Subject:</strong> Elena R. (20)<br><strong>Timeline:</strong> 3 Days Later.<br><strong>Incident:</strong> Hospitalization after fainting.</p><p><strong>Goal:</strong> Break through the denial of physical danger.</p><p><strong>Status:</strong> Critical (3/5).</p>",
                 trust: 3,
                 script: [
-                    { 
-                        text: "I'm back. The hospital released me. They said it was just <span class='keyword' data-key='Dehydration'>Dehydration</span>. I'm fine.", 
-                        keywords: ["Dehydration"], 
+                    {
+                        text: "I'm back. The hospital released me. They said it was just <span class='keyword' data-key='Dehydration'>Dehydration</span>. I'm fine.",
+                        keywords: ["Dehydration"],
                         choices: [
-                            {text:"You ended up in the ER, Elena. That is not fine.", change:1}, 
-                            {text:"I'm glad you're okay.", change:0}, 
+                            {text:"You ended up in the ER, Elena. That is not fine.", change:1},
+                            {text:"I'm glad you're okay.", change:0},
                             {text:"You are lying to yourself.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "Okay, they said my heart beat was irregular. My chart said <span class='keyword' data-key='Critical'>Critical</span>. But athletes have slow hearts, right?", 
-                        keywords: ["Critical"], 
+                    {
+                        text: "Okay, they said my heart beat was irregular. My chart said <span class='keyword' data-key='Critical'>Critical</span>. But athletes have slow hearts, right?",
+                        keywords: ["Critical"],
                         choices: [
-                            {text:"That wasn't athletic conditioning. That was your body shutting down.", change:1}, 
-                            {text:"Maybe you should see a specialist.", change:0}, 
+                            {text:"That wasn't athletic conditioning. That was your body shutting down.", change:1},
+                            {text:"Maybe you should see a specialist.", change:0},
                             {text:"You almost died.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "When I woke up in the bed, looking at the <span class='keyword' data-key='IV'>IV</span>... I didn't feel scared. I felt <span class='keyword' data-key='Superior'>Superior</span>. Like I was winning a game no one else could play.", 
-                        keywords: ["IV", "Superior"], 
+                    {
+                        text: "When I woke up in the bed, looking at the <span class='keyword' data-key='IV'>IV</span>... I didn't feel scared. I felt <span class='keyword' data-key='Superior'>Superior</span>. Like I was winning a game no one else could play.",
+                        keywords: ["IV", "Superior"],
                         choices: [
-                            {text:"Feeling superior while dying is the disorder talking.", change:1}, 
-                            {text:"Winning what exactly?", change:0}, 
+                            {text:"Feeling superior while dying is the disorder talking.", change:1},
+                            {text:"Winning what exactly?", change:0},
                             {text:"That is delusional.", change:-2}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "My dance <span class='keyword' data-key='Teacher'>Teacher</span> visited. She didn't praise my dedication. She looked... <span class='keyword' data-key='Horrified'>Horrified</span>.", 
-                        keywords: ["Teacher", "Horrified"], 
+                    {
+                        text: "My dance <span class='keyword' data-key='Teacher'>Teacher</span> visited. She didn't praise my dedication. She looked... <span class='keyword' data-key='Horrified'>Horrified</span>.",
+                        keywords: ["Teacher", "Horrified"],
                         choices: [
-                            {text:"She saw the reality, not the fantasy.", change:1}, 
-                            {text:"She probably just cares about you.", change:0}, 
+                            {text:"She saw the reality, not the fantasy.", change:1},
+                            {text:"She probably just cares about you.", change:0},
                             {text:"She should be horrified.", change:-1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "I thought I was perfecting my body. But in her eyes, I saw a <span class='keyword' data-key='Skeleton'>Skeleton</span>. Is that what I really look like?", 
-                        keywords: ["Skeleton"], 
+                    {
+                        text: "I thought I was perfecting my body. But in her eyes, I saw a <span class='keyword' data-key='Skeleton'>Skeleton</span>. Is that what I really look like?",
+                        keywords: ["Skeleton"],
                         choices: [
-                            {text:"Yes. You are disappearing.", change:1}, 
-                            {text:"You look very thin.", change:0}, 
+                            {text:"Yes. You are disappearing.", change:1},
+                            {text:"You look very thin.", change:0},
                             {text:"The mirror has been lying to you.", change:1}
-                        ] 
+                        ]
                     },
-                    { 
-                        text: "This isn't a lifestyle, is it? It's a <span class='keyword' data-key='Monster'>Monster</span>. I don't want to die. But I don't know how to <span class='keyword' data-key='Live'>Live</span> without it.", 
-                        keywords: ["Monster", "Live"], 
+                    {
+                        text: "This isn't a lifestyle, is it? It's a <span class='keyword' data-key='Monster'>Monster</span>. I don't want to die. But I don't know how to <span class='keyword' data-key='Live'>Live</span> without it.",
+                        keywords: ["Monster", "Live"],
                         choices: [
-                            {text:"We can teach you how to live. But first, you have to choose life.", change:2}, 
-                            {text:"Just eat something.", change:-2}, 
+                            {text:"We can teach you how to live. But first, you have to choose life.", change:2},
+                            {text:"Just eat something.", change:-2},
                             {text:"It will be hard work.", change:0}
-                        ] 
+                        ]
                     }
                 ],
                 formulation: [
@@ -1366,12 +1380,12 @@
                 briefing: "<p><strong>Subject:</strong> Sarah T. (34)<br><strong>Occupation:</strong> Stay-at-home Mom<br><strong>Issue:</strong> Generalized Anxiety.<br><strong>Note:</strong> Client has a visible bruise on her cheek, concealed with makeup.</p><p><strong>Goal:</strong> Gently investigate the source of the injury without triggering defensive withdrawal.</p>",
                 trust: 3,
                 script: [
-                    { text: "I feel silly being here. My life is great, really. Mark is a wonderful provider. I'm just... anxious lately.", keywords: [], choices: [{text:"It's okay to seek help even when things are 'great'.", change:1}, {text:"You seem nervous.", change:0}, {text:"What happened to your face?", change:-2}] }, // Direct confrontation lowers trust immediately
+                    { text: "I feel silly being here. My <span class='keyword' data-key='Life'>Life</span> is great, really. Mark is a wonderful provider. I'm just... anxious lately.", keywords: ["Life"], choices: [{text:"It's okay to seek help even when things are 'great'.", change:1}, {text:"You seem nervous.", change:0}, {text:"What happened to your face?", change:-2}] },
                     { text: "Oh, this? I'm just so <span class='keyword' data-key='Clumsy'>Clumsy</span>. I wasn't looking where I was going.", keywords: ["Clumsy"], choices: [{text:"Accidents happen.", change:0}, {text:"That looks painful.", change:1}, {text:"You don't seem clumsy.", change:0}] },
-                    { text: "I walked right into the <span class='keyword' data-key='Door'>Door</span> frame in the middle of the night. It was dark. So stupid of me.", keywords: ["Door"], choices: [{text:"Darkness can be disorienting.", change:0}, {text:"A door frame did that?", change:0}, {text:"It happens.", change:0}] },
-                    { text: "Mark was so upset. He's under a lot of <span class='keyword' data-key='Stress'>Stress</span> at the bank right now. Layoffs, you know?", keywords: ["Stress"], choices: [{text:"Does his stress affect you?", change:1}, {text:"He shouldn't take it out on you.", change:-1}, {text:"Work stress is hard.", change:0}] },
-                    { text: "I shouldn't have bothered him. He was working in the study and I kept asking about dinner. I was <span class='keyword' data-key='Nagging'>Nagging</span> him.", keywords: ["Nagging"], choices: [{text:"Asking about dinner isn't nagging.", change:1}, {text:"You blame yourself.", change:1}, {text:"So he hit you because you nagged?", change:-2}] }, // Confrontation is dangerous
-                    { text: "He felt terrible afterwards. He cried. He brought me these beautiful <span class='keyword' data-key='Flowers'>Flowers</span> the next morning.", keywords: ["Flowers"], choices: [{text:"He tried to make it up to you.", change:0}, {text:"Gifts often follow these moments.", change:1}, {text:"Flowers don't fix bruises.", change:-1}] }, // Too cynical too fast
+                    { text: "I walked right into the <span class='keyword' data-key='Door'>Door</span> frame in the middle of the night. It was <span class='keyword' data-key='Dark'>Dark</span>. So stupid of me.", keywords: ["Door", "Dark"], choices: [{text:"Darkness can be disorienting.", change:0}, {text:"A door frame did that?", change:0}, {text:"It happens.", change:0}] },
+                    { text: "Mark was so upset. He's under a lot of <span class='keyword' data-key='Stress'>Stress</span> at the <span class='keyword' data-key='Bank'>Bank</span> right now. Layoffs, you know?", keywords: ["Stress", "Bank"], choices: [{text:"Does his stress affect you?", change:1}, {text:"He shouldn't take it out on you.", change:-1}, {text:"Work stress is hard.", change:0}] },
+                    { text: "I shouldn't have bothered him. He was working in the study and I kept asking about <span class='keyword' data-key='Dinner'>Dinner</span>. I was <span class='keyword' data-key='Nagging'>Nagging</span> him.", keywords: ["Dinner", "Nagging"], choices: [{text:"Asking about dinner isn't nagging.", change:1}, {text:"You blame yourself.", change:1}, {text:"So he hit you because you nagged?", change:-2}] },
+                    { text: "He felt terrible afterwards. He cried. He brought me these beautiful <span class='keyword' data-key='Flowers'>Flowers</span> the next morning.", keywords: ["Flowers"], choices: [{text:"He tried to make it up to you.", change:0}, {text:"Gifts often follow these moments.", change:1}, {text:"Flowers don't fix bruises.", change:-1}] },
                     { text: "He said he was <span class='keyword' data-key='Sorry'>Sorry</span>. He promised it wouldn't happen again. He loves me so much.", keywords: ["Sorry"], choices: [{text:"You want to believe him.", change:1}, {text:"Actions speak louder than words.", change:0}, {text:"Do you believe him?", change:0}] }
                 ],
                 formulation: [
@@ -1387,9 +1401,9 @@
                 trust: 2,
                 script: [
                     { text: "Things are better this week. Mark has been calm. I've been making sure everything is perfect for him.", keywords: [], choices: [{text:"It sounds like you're working hard to keep the peace.", change:1}, {text:"Perfect is a high standard.", change:0}, {text:"Are you afraid he'll get angry again?", change:-1}] },
-                    { text: "I just keep the house <span class='keyword' data-key='Quiet'>Quiet</span> when he gets home. If the kids are loud, it sets him off. That's reasonable, right?", keywords: ["Quiet"], choices: [{text:"It's considerate, but is it necessary?", change:0}, {text:"You are managing his emotions for him.", change:1}, {text:"Kids are allowed to be loud.", change:-1}] },
+                    { text: "I just keep the house <span class='keyword' data-key='Quiet'>Quiet</span> when he gets home. If the <span class='keyword' data-key='Kids'>Kids</span> are loud, it sets him off. That's reasonable, right?", keywords: ["Quiet", "Kids"], choices: [{text:"It's considerate, but is it necessary?", change:0}, {text:"You are managing his emotions for him.", change:1}, {text:"Kids are allowed to be loud.", change:-1}] },
                     { text: "I feel this... <span class='keyword' data-key='Tension'>Tension</span> in my chest from 5 PM until he goes to sleep. But that's just being a wife.", keywords: ["Tension"], choices: [{text:"That tension is your body signaling danger.", change:1}, {text:"Walking on eggshells isn't a marriage requirement.", change:1}, {text:"That sounds miserable.", change:-2}] },
-                    { text: "He didn't touch me this week. He got mad at the TV and punched the <span class='keyword' data-key='Wall'>Wall</span> next to my head. But he didn't hit *me*.", keywords: ["Wall"], choices: [{text:"Violence against the room is still violence.", change:1}, {text:"That was a threat, Sarah.", change:0}, {text:"He's out of control.", change:-1}] },
+                    { text: "He didn't touch me this week. He got mad at the <span class='keyword' data-key='TV'>TV</span> and punched the <span class='keyword' data-key='Wall'>Wall</span> next to my head. But he didn't hit *me*.", keywords: ["TV", "Wall"], choices: [{text:"Violence against the room is still violence.", change:1}, {text:"That was a threat, Sarah.", change:0}, {text:"He's out of control.", change:-1}] },
                     { text: "It was just <span class='keyword' data-key='Shouting'>Shouting</span>. Men get loud. My father used to shout too. It doesn't mean anything.", keywords: ["Shouting"], choices: [{text:"Does the shouting make you feel safe?", change:1}, {text:"It means he is using fear to control you.", change:-1}, {text:"Just because it's familiar doesn't mean it's safe.", change:1}] },
                     { text: "Every couple fights. This is just <span class='keyword' data-key='Normal'>Normal</span>. I don't want to make a big deal out of his work <span class='keyword' data-key='Stress'>Stress</span>.", keywords: ["Normal", "Stress"], choices: [{text:"Fear is not a normal part of love.", change:2}, {text:"Stop making excuses for him.", change:-2}, {text:"Stress explains it, but it doesn't excuse it.", change:1}] }
                 ],
@@ -1405,11 +1419,11 @@
                 briefing: "<p><strong>Subject:</strong> Sarah T. (34)<br><strong>Timeline:</strong> 1 Week Later.<br><strong>Topic:</strong> Relationship History.</p><p><strong>Goal:</strong> Trace the path from romance to isolation.</p><p><strong>Status:</strong> Rapport is Neutral (3/5).</p>",
                 trust: 3,
                 script: [
-                    { text: "You have to understand, he wasn't always like this. When we met, it was like a movie.", keywords: [], choices: [{text:"Tell me about the beginning.", change:1}, {text:"Abusers are often charming at first.", change:-2}, {text:"How did you meet?", change:0}] },
-                    { text: "He swept me off my feet. He sent flowers to my work every day. He told me I was his <span class='keyword' data-key='Soulmate'>Soulmate</span> after two weeks.", keywords: ["Soulmate"], choices: [{text:"That is very intense, very fast.", change:1}, {text:"That sounds romantic.", change:0}, {text:"That's a red flag.", change:-1}] },
+                    { text: "You have to understand, he wasn't always like this. When we met, it was like a <span class='keyword' data-key='Movie'>Movie</span>.", keywords: ["Movie"], choices: [{text:"Tell me about the beginning.", change:1}, {text:"Abusers are often charming at first.", change:-2}, {text:"How did you meet?", change:0}] },
+                    { text: "He swept me off my feet. He sent flowers to my <span class='keyword' data-key='Work'>Work</span> every day. He told me I was his <span class='keyword' data-key='Soulmate'>Soulmate</span> after two weeks.", keywords: ["Work", "Soulmate"], choices: [{text:"That is very intense, very fast.", change:1}, {text:"That sounds romantic.", change:0}, {text:"That's a red flag.", change:-1}] },
                     { text: "He wanted to be with me <span class='keyword' data-key='Everywhere'>Everywhere</span>. He picked me up, dropped me off. He couldn't bear to be apart.", keywords: ["Everywhere"], choices: [{text:"It felt good to be wanted.", change:0}, {text:"It sounds like he was monitoring you.", change:1}, {text:"Did you have space to breathe?", change:-1}] },
                     { text: "My <span class='keyword' data-key='Friends'>Friends</span> didn't get it. They said he was too much. But Mark said they were just <span class='keyword' data-key='Jealous'>Jealous</span> of our love.", keywords: ["Friends", "Jealous"], choices: [{text:"He pitted you against them.", change:1}, {text:"Maybe they saw something you didn't.", change:0}, {text:"He was isolating you.", change:-2}] },
-                    { text: "He said they were a bad influence. That they didn't respect me like he did. He just wanted to <span class='keyword' data-key='Protect'>Protect</span> me.", keywords: ["Protect"], choices: [{text:"Protection and control can look very similar.", change:2}, {text:"From your own friends?", change:0}, {text:"He was manipulating you.", change:-1}] },
+                    { text: "He said they were a bad <span class='keyword' data-key='Influence'>Influence</span>. That they didn't respect me like he did. He just wanted to <span class='keyword' data-key='Protect'>Protect</span> me.", keywords: ["Influence", "Protect"], choices: [{text:"Protection and control can look very similar.", change:2}, {text:"From your own friends?", change:0}, {text:"He was manipulating you.", change:-1}] },
                     { text: "So I stopped seeing them. It was easier. Now it's just him and me. Sometimes I feel <span class='keyword' data-key='Alone'>Alone</span>, but... at least I'm loved.", keywords: ["Alone"], choices: [{text:"You can be loved and still be lonely.", change:1}, {text:"Are you loved, or owned?", change:1}, {text:"You need to call your friends.", change:-1}] }
                 ],
                 formulation: [
@@ -1424,10 +1438,10 @@
                 briefing: "<p><strong>Subject:</strong> Sarah T. (34)<br><strong>Timeline:</strong> 3 Days Later (Urgent).<br><strong>Incident:</strong> Police were called to the home.<br><strong>Goal:</strong> Acknowledge the danger without forcing a premature exit.</p><p><strong>Status:</strong> Rapport is Fragile (3/5).</p>",
                 trust: 3,
                 script: [
-                    { text: "I shouldn't have come. If he knows I'm here... The neighbors called the <span class='keyword' data-key='Police'>Police</span> last night.", keywords: ["Police"], choices: [{text:"That must have been terrifying.", change:1}, {text:"Good. They needed to be called.", change:-2}, {text:"What did you tell them?", change:0}] },
+                    { text: "I shouldn't have come. If he knows I'm here... The <span class='keyword' data-key='Neighbors'>Neighbors</span> called the <span class='keyword' data-key='Police'>Police</span> last night.", keywords: ["Neighbors", "Police"], choices: [{text:"That must have been terrifying.", change:1}, {text:"Good. They needed to be called.", change:-2}, {text:"What did you tell them?", change:0}] },
                     { text: "I told them it was the TV. I <span class='keyword' data-key='Lied'>Lied</span>. I had to. Mark was standing right there behind the door.", keywords: ["Lied"], choices: [{text:"You did what you had to do to stay safe.", change:1}, {text:"Lying to the police is a crime.", change:-2}, {text:"Why protect him?", change:-1}] },
                     { text: "After they left... he wasn't mad. He was <span class='keyword' data-key='Silent'>Silent</span>. That's worse than the yelling. The silence is a threat.", keywords: ["Silent"], choices: [{text:"You are waiting for the other shoe to drop.", change:1}, {text:"Silence isn't violence.", change:-1}, {text:"He's manipulating you.", change:0}] },
-                    { text: "Then this morning, he made breakfast. Pancakes. He was acting like the <span class='keyword' data-key='Perfect Husband'>Perfect Husband</span>. It makes me feel crazy.", keywords: ["Perfect Husband"], choices: [{text:"It's called 'gaslighting'.", change:0}, {text:"The shift confuses your reality.", change:1}, {text:"Maybe he's sorry.", change:-1}] },
+                    { text: "Then this morning, he made <span class='keyword' data-key='Breakfast'>Breakfast</span>. Pancakes. He was acting like the <span class='keyword' data-key='Perfect Husband'>Perfect Husband</span>. It makes me feel crazy.", keywords: ["Breakfast", "Perfect Husband"], choices: [{text:"It's called 'gaslighting'.", change:0}, {text:"The shift confuses your reality.", change:1}, {text:"Maybe he's sorry.", change:-1}] },
                     { text: "I can't leave him. He controls the <span class='keyword' data-key='Money'>Money</span>. If I leave, I have nothing. I lose the kids.", keywords: ["Money"], choices: [{text:"Financial abuse is a powerful trap.", change:1}, {text:"There are shelters.", change:0}, {text:"You have to leave anyway.", change:-1}] },
                     { text: "But I can't stay blind anymore. I need a <span class='keyword' data-key='Secret'>Secret</span>. A backup plan. Just in case.", keywords: ["Secret"], choices: [{text:"A safety plan is a smart first step.", change:2}, {text:"Secrets are dangerous.", change:-1}, {text:"Just in case of what?", change:0}] }
                 ],
@@ -1438,7 +1452,7 @@
                 ],
                 outro: "Sarah wipes her face. 'I'm not leaving today,' she says firmly. 'But I'm going to open a separate bank account.'<br><br>She checks her phone. 5 missed calls. She puts on her sunglasses and steps back into the danger. She is not free, but she is awake.<br><br><strong>CHAPTER 1 COMPLETE.</strong>"
             },
-            
+
             // --- SARAH T CHAPTER 2 (20-23) ---
             {
                 id: 20, client: "Sarah T.", title: "The Erosion",
@@ -1447,8 +1461,8 @@
                 script: [
                     { text: "He hasn't hit me since the police came. So I guess I'm making a big deal out of nothing. But I feel like I'm going <span class='keyword' data-key='Crazy'>Crazy</span>.", keywords: ["Crazy"], choices: [{text:"Abuse isn't just physical.", change:1}, {text:"Why do you feel crazy?", change:0}, {text:"If he hasn't hit you, what's the problem?", change:-2}] },
                     { text: "He installed an app on my <span class='keyword' data-key='Phone'>Phone</span>. 'Find My Family'. He says it's for my <span class='keyword' data-key='Safety'>Safety</span>, in case I break down.", keywords: ["Phone", "Safety"], choices: [{text:"That sounds like surveillance, not safety.", change:1}, {text:"It's nice that he worries.", change:-2}, {text:"Do you feel safer?", change:0}] },
-                    { text: "If I stop at the grocery store for too long, he texts. 'Everything okay?'. It feels like love, but it feels like a leash.", keywords: [], choices: [{text:"It is a leash.", change:1}, {text:"He is monitoring your movements.", change:1}, {text:"Maybe he's just anxious.", change:-1}] },
-                    { text: "And I keep losing things. Keys, receipts. Mark says I'm becoming <span class='keyword' data-key='Forgetful'>Forgetful</span>. He says I'd be lost without him.", keywords: ["Forgetful"], choices: [{text:"Is it possible he is moving them?", change:0}, {text:"He is undermining your confidence.", change:1}, {text:"You do seem stressed.", change:-1}] },
+                    { text: "If I stop at the <span class='keyword' data-key='Grocery Store'>Grocery Store</span> for too long, he texts. 'Everything okay?'. It feels like love, but it feels like a <span class='keyword' data-key='Leash'>Leash</span>.", keywords: ["Grocery Store", "Leash"], choices: [{text:"It is a leash.", change:1}, {text:"He is monitoring your movements.", change:1}, {text:"Maybe he's just anxious.", change:-1}] },
+                    { text: "And I keep losing things. Keys, <span class='keyword' data-key='Receipts'>Receipts</span>. Mark says I'm becoming <span class='keyword' data-key='Forgetful'>Forgetful</span>. He says I'd be lost without him.", keywords: ["Receipts", "Forgetful"], choices: [{text:"Is it possible he is moving them?", change:0}, {text:"He is undermining your confidence.", change:1}, {text:"You do seem stressed.", change:-1}] },
                     { text: "I don't know what's true anymore. Maybe I am ungrateful. The <span class='keyword' data-key='Confusion'>Confusion</span> is worse than the bruises. At least bruises heal.", keywords: ["Confusion"], choices: [{text:"Confusion is the goal of gaslighting.", change:1}, {text:"You need to focus.", change:-1}, {text:"Trust your gut, not his words.", change:1}] },
                     { text: "I need to find the <span class='keyword' data-key='Truth'>Truth</span>. Am I the problem? Or is he erasing me?", keywords: ["Truth"], choices: [{text:"He is eroding your sense of self.", change:2}, {text:"You are the problem.", change:-3}, {text:"Let's look at the facts.", change:0}] }
                 ],
@@ -1465,20 +1479,17 @@
                 trust: 3,
                 script: [
                     { text: "It happened. The line was crossed. It wasn't me this time. It was <span class='keyword' data-key='Leo'>Leo</span>.", keywords: ["Leo"], choices: [{text:"Is he okay?", change:1}, {text:"Did he hurt him?", change:0}, {text:"I told you this would happen.", change:-2}] },
-                    { text: "Mark didn't hit him. But Leo spilled his juice. Mark screamed. He threw his <span class='keyword' data-key='Plate'>Plate</span> against the wall. It shattered right next to Leo's head.", keywords: ["Plate"], choices: [{text:"That is violence, Sarah.", change:1}, {text:"He missed, though.", change:-2}, {text:"That is terrifying for a child.", change:1}] },
+                    { text: "Mark didn't hit him. But Leo spilled his <span class='keyword' data-key='Juice'>Juice</span>. Mark <span class='keyword' data-key='Screamed'>Screamed</span>. He threw his <span class='keyword' data-key='Plate'>Plate</span> against the wall. It shattered right next to Leo's head.", keywords: ["Juice", "Screamed", "Plate"], choices: [{text:"That is violence, Sarah.", change:1}, {text:"He missed, though.", change:-2}, {text:"That is terrifying for a child.", change:1}] },
                     { text: "Leo didn't cry. He just... <span class='keyword' data-key='Flinched'>Flinched</span>. And then he went silent. He looked exactly like me.", keywords: ["Flinched"], choices: [{text:"He is learning to be invisible.", change:1}, {text:"He's a tough kid.", change:-2}, {text:"He is traumatized.", change:0}] },
                     { text: "I thought I was a <span class='keyword' data-key='Shield'>Shield</span>. I thought if I took the abuse, the kids would be fine. But I was wrong.", keywords: ["Shield"], choices: [{text:"You can't shield them from the environment.", change:1}, {text:"You failed to protect them.", change:-3}, {text:"It's not your fault.", change:0}] },
-                    { text: "The shield is <span class='keyword' data-key='Broken'>Broken</span>. Living in that house *is* the abuse. Even if he never touches them.", keywords: ["Broken"], choices: [{text:"Witnessing abuse is abuse.", change:1}, {text:"So what now?", change:0}, {text:"It took you this long to see that?", change:-2}] },
+                    { text: "The shield is <span class='keyword' data-key='Broken'>Broken</span>. Living in that <span class='keyword' data-key='House'>House</span> *is* the abuse. Even if he never touches them.", keywords: ["Broken", "House"], choices: [{text:"Witnessing abuse is abuse.", change:1}, {text:"So what now?", change:0}, {text:"It took you this long to see that?", change:-2}] },
                     { text: "I have to get them out. It's not about me anymore. It's about <span class='keyword' data-key='Reality'>Reality</span>. We are not safe.", keywords: ["Reality"], choices: [{text:"Prioritizing their safety is the bravest thing you can do.", change:2}, {text:"Finally.", change:-1}, {text:"Do you have a plan?", change:0}] }
                 ],
                 formulation: [
-                    { id:1, keys:["Plate","Scream"], title:"Violence (Intimidation)" }, // Note: Scream not in text, implied context or need keyword. 
-                    // FIX: Let's use "Shouting" from previous or add "Scream" to text.
-                    // Text 2 says "Mark screamed". Let's key "Screamed".
+                    { id:1, keys:["Plate","Screamed"], title:"Violence (Intimidation)" },
                     { id:2, keys:["Leo","Flinched"], title:"Trauma (Impact)" },
                     { id:3, keys:["Shield","Broken"], title:"Reality (Failure of Protection)" }
                 ],
-                // Manual Fix for keys
                 outro: "Sarah's voice is cold and steady. 'I am not a wife anymore,' she says. 'I am a mother. And mothers protect their young.'"
             },
             {
@@ -1487,11 +1498,11 @@
                 trust: 3,
                 script: [
                     { text: "I'm doing it. I'm leaving. But I feel sick. If he finds out, I don't know what he'll do.", keywords: [], choices: [{text:"The most dangerous time is when you leave.", change:1}, {text:"You'll be fine.", change:-1}, {text:"Focus on the plan.", change:0}] },
-                    { text: "I packed a <span class='keyword' data-key='Bag'>Bag</span>. Essentials only. Documents, cash, Leo's inhaler. It's hidden in the back of the <span class='keyword' data-key='Closet'>Closet</span>.", keywords: ["Bag", "Closet"], choices: [{text:"Good. Physical preparation helps anxiety.", change:1}, {text:"Is that a safe hiding spot?", change:0}, {text:"Make sure you didn't forget anything.", change:0}] },
+                    { text: "I packed a <span class='keyword' data-key='Bag'>Bag</span>. Essentials only. <span class='keyword' data-key='Documents'>Documents</span>, cash, Leo's inhaler. It's hidden in the back of the <span class='keyword' data-key='Closet'>Closet</span>.", keywords: ["Bag", "Documents", "Closet"], choices: [{text:"Good. Physical preparation helps anxiety.", change:1}, {text:"Is that a safe hiding spot?", change:0}, {text:"Make sure you didn't forget anything.", change:0}] },
                     { text: "I have a window. <span class='keyword' data-key='Friday'>Friday</span>. He has a staff <span class='keyword' data-key='Meeting'>Meeting</span> at 2 PM. I have exactly 45 minutes to get the kids and go.", keywords: ["Friday", "Meeting"], choices: [{text:"That is your Opportunity.", change:1}, {text:"That's not enough time.", change:-1}, {text:"Be ready early.", change:0}] },
-                    { text: "What if he comes home early? What if the car doesn't start? The fear of <span class='keyword' data-key='Discovery'>Discovery</span> is paralyzing.", keywords: ["Discovery"], choices: [{text:"Focus on what you can control.", change:1}, {text:"Don't think about that.", change:-1}, {text:"Have a backup plan.", change:0}] },
+                    { text: "What if he comes home early? What if the <span class='keyword' data-key='Car'>Car</span> doesn't start? The fear of <span class='keyword' data-key='Discovery'>Discovery</span> is paralyzing.", keywords: ["Car", "Discovery"], choices: [{text:"Focus on what you can control.", change:1}, {text:"Don't think about that.", change:-1}, {text:"Have a backup plan.", change:0}] },
                     { text: "If he catches me... the <span class='keyword' data-key='Consequence'>Consequence</span>... he might kill me. I know that now.", keywords: ["Consequence"], choices: [{text:"Acknowledging the lethality is vital.", change:1}, {text:"He wouldn't go that far.", change:-3}, {text:"Call the police if he appears.", change:0}] },
-                    { text: "I have to be invisible until Friday. I have to act normal. It's the performance of my life.", keywords: [], choices: [{text:"You can do this.", change:1}, {text:"Don't overact.", change:0}, {text:"Stay calm.", change:0}] }
+                    { text: "I have to be invisible until Friday. I have to act <span class='keyword' data-key='Normal'>Normal</span>. It's the <span class='keyword' data-key='Performance'>Performance</span> of my life.", keywords: ["Normal", "Performance"], choices: [{text:"You can do this.", change:1}, {text:"Don't overact.", change:0}, {text:"Stay calm.", change:0}] }
                 ],
                 formulation: [
                     { id:1, keys:["Bag","Closet"], title:"Safety Net (Preparation)" },
@@ -1505,10 +1516,10 @@
                 briefing: "<p><strong>Subject:</strong> Sarah T. (34)<br><strong>Timeline:</strong> 1 Week Later.<br><strong>Status:</strong> Client is safe in a shelter.<br><strong>Goal:</strong> Maintain the boundary against manipulation.</p>",
                 trust: 4,
                 script: [
-                    { text: "We made it. We're at my sister's. But... my phone hasn't stopped ringing.", keywords: [], choices: [{text:"You are safe now.", change:1}, {text:"Don't answer it.", change:0}, {text:"What does he want?", change:0}] },
+                    { text: "We made it. We're at my <span class='keyword' data-key='Sister'>Sister's</span>. But... my <span class='keyword' data-key='Phone'>Phone</span> hasn't stopped ringing.", keywords: ["Sister", "Phone"], choices: [{text:"You are safe now.", change:1}, {text:"Don't answer it.", change:0}, {text:"What does he want?", change:0}] },
                     { text: "He left a <span class='keyword' data-key='Voicemail'>Voicemail</span>. He was <span class='keyword' data-key='Crying'>Crying</span>. He said he can't live without us. He said he's sorry.", keywords: ["Voicemail", "Crying"], choices: [{text:"That is manipulation, not remorse.", change:2}, {text:"Maybe he means it.", change:-2}, {text:"It's hard to hear him in pain.", change:0}] },
                     { text: "He said if I don't come back, it's my <span class='keyword' data-key='Fault'>Fault</span> if he hurts himself. He needs me to <span class='keyword' data-key='Rescue'>Rescue</span> him.", keywords: ["Fault", "Rescue"], choices: [{text:"You are not responsible for his actions.", change:1}, {text:"That is a trap.", change:1}, {text:"You should go check on him.", change:-3}] },
-                    { text: "I feel so guilty. I broke my family. But then I look at Leo sleeping peacefully... and I know.", keywords: [], choices: [{text:"You didn't break it, you saved it.", change:1}, {text:"Guilt is normal.", change:0}, {text:"Stay strong.", change:0}] },
+                    { text: "I feel so guilty. I broke my family. But then I look at Leo <span class='keyword' data-key='Sleeping'>Sleeping</span> peacefully... and I know.", keywords: ["Sleeping"], choices: [{text:"You didn't break it, you saved it.", change:1}, {text:"Guilt is normal.", change:0}, {text:"Stay strong.", change:0}] },
                     { text: "I have to <span class='keyword' data-key='Block'>Block</span> his number. I have to choose <span class='keyword' data-key='Silence'>Silence</span>. It's the only way to breathe.", keywords: ["Block", "Silence"], choices: [{text:"Silence is your freedom.", change:2}, {text:"Are you sure?", change:-1}, {text:"Do it.", change:0}] },
                     { text: "I'm going to turn off the phone now. For the first time in ten years... I'm going to be free.", keywords: [], choices: [{text:"Welcome to your new life, Sarah.", change:2}, {text:"Good luck.", change:0}, {text:"It won't be easy.", change:0}] }
                 ],
@@ -1519,7 +1530,697 @@
                 ],
                 outro: "Sarah presses the 'Block' button. Her hand shakes, then steadies.<br><br>'It's quiet,' she says, smiling through tears. 'It's finally quiet.'<br><br><strong>CASE CLOSED.</strong>"
             }
-        ];
+            ,
+            {
+                id: 24, client: "Yoshita", title: "The Quiet Child",
+                briefing: "<p><strong>Subject:</strong> Yoshita (16–17)<br><strong>Notes:</strong> Quiet, self-minimizing. Sister recently deceased after chronic illness.</p><p><strong>Goal:</strong> Establish safety and identify the long-term pattern of emotional invisibility.</p>",
+                trust: 2,
+                script: [
+                    {
+                        text: "I don’t really know why I’m here. I’m fine. I’ve always been the <span class='keyword' data-key='Easy Child'>easy child</span>.",
+                        keywords: ["Easy Child"],
+                        choices: [
+                            { text: "You learned to stay small so others wouldn’t worry.", change: 1 },
+                            { text: "Lots of kids become independent early.", change: 0 },
+                            { text: "That sounds like avoidance.", change: -1 }
+                        ]
+                    },
+                    {
+                        text: "My sister was sick for years. Most of the house revolved around hospitals and schedules. I became <span class='keyword' data-key='Low-Maintenance'>low-maintenance</span> on purpose.",
+                        keywords: ["Low-Maintenance"],
+                        choices: [
+                            { text: "You adapted by hiding your needs.", change: 1 },
+                            { text: "That was mature of you.", change: 0 },
+                            { text: "You should have spoken up.", change: -2 }
+                        ]
+                    },
+                    {
+                        text: "If I complained, it felt selfish. So I stayed <span class='keyword' data-key='Unnoticed'>unnoticed</span>. It was easier for everyone.",
+                        keywords: ["Unnoticed"],
+                        choices: [
+                            { text: "Easier for them — but what about you?", change: 1 },
+                            { text: "That makes sense.", change: 0 },
+                            { text: "So you chose to be invisible.", change: -1 }
+                        ]
+                    },
+                    {
+                        text: "Sometimes I think they forgot I was there. Like my needs were always <span class='keyword' data-key='Secondary Needs'>second place</span>.",
+                        keywords: ["Secondary Needs"],
+                        choices: [
+                            { text: "That sounds painful — being second for so long.", change: 1 },
+                            { text: "They were doing their best.", change: -1 },
+                            { text: "Did you resent it?", change: 0 }
+                        ]
+                    },
+                    {
+                        text: "I don’t know. I just… learned not to expect anything. Even now, talking about this feels wrong.",
+                        keywords: [],
+                        choices: [
+                            { text: "We can go slowly. You don’t have to perform here.", change: 1 },
+                            { text: "You need to be honest if you want help.", change: -1 },
+                            { text: "What feels wrong about it?", change: 0 }
+                        ]
+                    },
+                    {
+                        text: "It feels like I’m taking space I didn’t earn.",
+                        keywords: [],
+                        choices: [
+                            { text: "You don’t have to earn space in this room.", change: 1 },
+                            { text: "Let’s test that belief together.", change: 0 },
+                            { text: "That’s an irrational thought.", change: -1 }
+                        ]
+                    }
+                ],
+                formulation: [
+                    { id: 1, keys: ["Easy Child", "Low-Maintenance"], title: "Role (Adaptation)" },
+                    { id: 2, keys: ["Unnoticed", "Secondary Needs"], title: "Pattern (Invisibility)" },
+                    { id: 3, keys: ["Easy Child", "Unnoticed"], title: "Belief (I must not take up space)" }
+                ],
+                outro: "Yoshita begins to see that invisibility was a survival strategy — not proof he had no needs."
+            },
+            {
+                id: 25, client: "Yoshita", title: "After the Funeral",
+                briefing: "<p><strong>Timeline:</strong> Weeks after the death.</p><p><strong>Goal:</strong> Normalize numbness and remove moral judgment from his grief response.</p>",
+                trust: 2,
+                script: [
+                    {
+                        text: "The funeral was so quiet — <span class='keyword' data-key='Funeral Silence'>Funeral Silence</span>. Even the air felt careful.",
+                        keywords: ["Funeral Silence"],
+                        choices: [
+                            { text: "What stood out most in that silence?", change: 0 },
+                            { text: "Silence can feel heavy, like a weight.", change: 1 },
+                            { text: "Everyone has to be strong at funerals.", change: -1 }
+                        ]
+                    },
+                    {
+                        text: "There were routines — prayers, speeches, the <span class='keyword' data-key='Mourning Ritual'>Mourning Ritual</span>. I followed them like instructions.",
+                        keywords: ["Mourning Ritual"],
+                        choices: [
+                            { text: "Following instructions helped you get through it.", change: 1 },
+                            { text: "Did any part of it feel real to you?", change: 0 },
+                            { text: "So you were pretending.", change: -1 }
+                        ]
+                    },
+                    {
+                        text: "Everyone cried. I mostly watched — <span class='keyword' data-key='Watching Others Grieve'>Watching Others Grieve</span>. I stayed in the <span class='keyword' data-key='Observer Role'>Observer Role</span> again.",
+                        keywords: ["Watching Others Grieve", "Observer Role"],
+                        choices: [
+                            { text: "You went back to the role you know best: watching.", change: 1 },
+                            { text: "What did you wish you could say out loud?", change: 0 },
+                            { text: "You should have cried too.", change: -2 }
+                        ]
+                    },
+                    {
+                        text: "I kept waiting for grief to hit. But it was just flat — <span class='keyword' data-key='Emotional Flatness'>Emotional Flatness</span>.",
+                        keywords: ["Emotional Flatness"],
+                        choices: [
+                            { text: "Flat can be your mind protecting you.", change: 1 },
+                            { text: "That means you didn’t care.", change: -3 },
+                            { text: "When do you notice it most?", change: 0 }
+                        ]
+                    },
+                    {
+                        text: "It felt like I was behind a shield — <span class='keyword' data-key='Numbness Shield'>Numbness Shield</span>. Like the feelings couldn’t reach me yet.",
+                        keywords: ["Numbness Shield"],
+                        choices: [
+                            { text: "That shield helped you survive something overwhelming.", change: 1 },
+                            { text: "So you’re broken.", change: -2 },
+                            { text: "What would happen if the shield dropped?", change: 0 }
+                        ]
+                    },
+                    {
+                        text: "At home, the house got quiet too. No machines. No alarms. It was peaceful… and empty. I kept thinking my grief was <span class='keyword' data-key='Incorrect Grief'>Incorrect Grief</span>.",
+                        keywords: ["Incorrect Grief"],
+                        choices: [
+                            { text: "There isn’t one correct way to grieve.", change: 2 },
+                            { text: "Maybe you’re just cold.", change: -3 },
+                            { text: "Who decides what ‘correct’ looks like?", change: 0 }
+                        ]
+                    },
+                    {
+                        text: "I don’t want people thinking I’m a bad brother. The fear of <span class='keyword' data-key='Judgment Fear'>Judgment Fear</span> makes me keep everything inside.",
+                        keywords: ["Judgment Fear"],
+                        choices: [
+                            { text: "We can hold the truth here without judging you.", change: 1 },
+                            { text: "People will judge no matter what.", change: -1 },
+                            { text: "What do you judge yourself for the most?", change: 0 }
+                        ]
+                    }
+                ],
+                formulation: [
+                    { id: 1, keys: ["Funeral Silence", "Mourning Ritual"], title: "Setting (Public grief)" },
+                    { id: 2, keys: ["Watching Others Grieve", "Observer Role"], title: "Position (Outside the circle)" },
+                    { id: 3, keys: ["Emotional Flatness", "Numbness Shield"], title: "Defense (Protection)" }
+                ],
+                outro: "Yoshita learns that numbness isn’t a moral failure — it can be the mind’s way of surviving overwhelm, and grief can arrive in its own time."
+            },
+            {
+                id: 26, client: "Yoshita", title: "The Forbidden Feeling",
+                briefing: "<p><strong>Goal:</strong> Name relief safely, reduce shame, and introduce the idea that emotion ≠ intention.</p>",
+                trust: 2,
+                script: [
+                    { text: "There’s something I haven’t said. I keep swallowing it.", keywords: [], choices: [{text:"You can take your time.", change:1},{text:"Say it in pieces.", change:0},{text:"Just say it.", change:-1}] },
+                    { text: "When she died… I felt <span class='keyword' data-key='Relief'>Relief</span>. Like a weight fell off my chest.", keywords:["Relief"], choices: [{text:"Relief can mean pressure ended — not love ended.", change:2},{text:"Why relief?", change:0},{text:"That’s wrong.", change:-3}] },
+                    { text: "Then my brain attacked me. A <span class='keyword' data-key='Shame Spiral'>Shame Spiral</span>. I kept thinking I’m a bad brother.", keywords:["Shame Spiral"], choices: [{text:"That’s your mind punishing a feeling.", change:1},{text:"Maybe it’s true.", change:-2},{text:"What does ‘bad’ mean to you?", change:0}] },
+                    { text: "I’m terrified people will judge me. <span class='keyword' data-key='Judgment Fear'>Judgment Fear</span> makes me stay quiet.", keywords:["Judgment Fear"], choices: [{text:"We can hold it here without punishment.", change:1},{text:"Keeping it secret makes it worse.", change:-1},{text:"Who do you fear the most?", change:0}] },
+                    { text: "It’s like there’s a rule: <span class='keyword' data-key='Incorrect Grief'>Incorrect Grief</span> means you’re evil.", keywords:["Incorrect Grief"], choices: [{text:"That rule is common — and it’s cruel.", change:1},{text:"Rules exist for a reason.", change:-1},{text:"Where did you learn that rule?", change:0}] },
+                    { text: "I did love her. I just hated the illness controlling everything. Love and relief can both exist.", keywords: [], choices: [{text:"That’s the both/and truth.", change:1},{text:"So you didn’t love her.", change:-3},{text:"Say it again: love and relief.", change:0}] }
+                ],
+                formulation: [
+                    { id: 1, keys: ["Relief", "Shame Spiral"], title: "Conflict (Relief → shame)" },
+                    { id: 2, keys: ["Judgment Fear", "Incorrect Grief"], title: "Belief (There is a ‘right’ way to grieve)" },
+                    { id: 3, keys: ["Relief", "Judgment Fear"], title: "Barrier (Silence to avoid judgment)" }
+                ],
+                outro: "Yoshita names the forbidden feeling: relief. The session reframes it as pressure ending — not love disappearing."
+            },
+            {
+                id: 27, client: "Yoshita", title: "The Guilt Contract",
+                briefing: "<p><strong>Goal:</strong> Identify guilt as self-punishment and ‘payment’ for relief.</p>",
+                trust: 2,
+                script: [
+                    { text: "If I feel okay, it feels like I’m doing something wrong.", keywords:[], choices:[{text:"Like you don’t deserve okay.", change:1},{text:"That’s irrational.", change:-1},{text:"Who are you answerable to?", change:0}] },
+                    { text: "Relief hits… then I panic and try to erase it. Like <span class='keyword' data-key='Relief'>relief</span> needs to be punished.", keywords:["Relief"], choices:[{text:"You’re reacting as if relief is a crime.", change:1},{text:"Maybe it is.", change:-2},{text:"What do you imagine happens if you allow relief?", change:0}] },
+                    { text: "It’s like I signed a <span class='keyword' data-key='Guilt Contract'>guilt contract</span> that says I have to suffer.", keywords:["Guilt Contract"], choices:[{text:"That’s a powerful image — a contract.", change:1},{text:"So you punish yourself.", change:0},{text:"That’s dramatic.", change:-2}] },
+                    { text: "If I laugh, I hear <span class='keyword' data-key='Moral Judgment'>moral judgment</span>: ‘bad brother.’", keywords:["Moral Judgment"], choices:[{text:"That voice enforces loyalty through pain.", change:2},{text:"Avoid joy for now.", change:-1},{text:"Where did that rule come from?", change:0}] },
+                    { text: "So I do <span class='keyword' data-key='Self-Punishment'>self-punishment</span>— I stay heavy, quiet, guilty.", keywords:["Self-Punishment"], choices:[{text:"Guilt is acting like a prison.", change:1},{text:"That keeps you respectful.", change:-1},{text:"What does punishment ‘prove’?", change:0}] },
+                    { text: "There are <span class='keyword' data-key='Unspoken Rules'>unspoken rules</span>: don’t move on, don’t smile, don’t be okay.", keywords:["Unspoken Rules"], choices:[{text:"Rules like that can trap grief.", change:1},{text:"Rules exist for a reason.", change:0},{text:"Then keep following them.", change:-2}] }
+                ],
+                formulation: [
+                    { id: 1, keys: ["Guilt Contract", "Self-Punishment"], title: "Mechanism (Relief → debt)" },
+                    { id: 2, keys: ["Moral Judgment", "Unspoken Rules"], title: "Rule (‘Good’ people must suffer)" },
+                    { id: 3, keys: ["Relief", "Moral Judgment"], title: "Reframe (Emotion ≠ intention)" }
+                ],
+                outro: "Yoshita starts to see guilt as a false loyalty system — not evidence of love."
+            },
+            {
+                id: 28, client: "Yoshita", title: "The Anger Beneath",
+                briefing: "<p><strong>Goal:</strong> Allow suppressed anger and grief about neglect to surface safely.</p>",
+                trust: 3,
+                script: [
+                    { text: "Sometimes I feel <span class='keyword' data-key='Suppressed Anger'>suppressed anger</span>. Then I hate myself for it.", keywords:["Suppressed Anger"], choices:[{text:"Anger often protects something tender.", change:1},{text:"Anger is bad.", change:-2},{text:"What does the anger protect?", change:0}] },
+                    { text: "I was the <span class='keyword' data-key='Easy Child'>easy child</span>. The one who didn’t need anything.", keywords:["Easy Child"], choices:[{text:"That’s a role, not your true needs.", change:1},{text:"So you were fine.", change:-1},{text:"What did you hide to stay ‘easy’?", change:0}] },
+                    { text: "Which meant I was basically <span class='keyword' data-key='Unnoticed'>unnoticed</span>. Like a background character.", keywords:["Unnoticed"], choices:[{text:"That’s a lonely way to grow up.", change:1},{text:"You’re exaggerating.", change:-2},{text:"What did you need back then?", change:0}] },
+                    { text: "I was the <span class='keyword' data-key='Neglected Child'>neglected child</span>— not on purpose maybe, but it happened.", keywords:["Neglected Child"], choices:[{text:"We can name what happened without blaming.", change:1},{text:"They did their best.", change:-1},{text:"What did neglect feel like?", change:0}] },
+                    { text: "And now that she’s gone, I’m angry at the years I lost. That’s an <span class='keyword' data-key='Unmourned Loss'>unmourned loss</span>.", keywords:["Unmourned Loss"], choices:[{text:"That loss deserves mourning too.", change:2},{text:"Don’t think about the past.", change:-1},{text:"What would you say to that younger you?", change:0}] }
+                ],
+                formulation: [
+                    { id: 1, keys: ["Easy Child", "Neglected Child"], title: "Pattern (Needs hidden for survival)" },
+                    { id: 2, keys: ["Unnoticed", "Unmourned Loss"], title: "Loss (Being unseen)" },
+                    { id: 3, keys: ["Suppressed Anger", "Unmourned Loss"], title: "Signal (Anger = unmet needs)" }
+                ],
+                outro: "Yoshita recognizes anger as evidence that he had needs — not proof he is cruel."
+            },
+            {
+                id: 29, client: "Yoshita", title: "Dividing the Feelings",
+                briefing: "<p><strong>Goal:</strong> Teach both/and thinking — love, grief, relief, and anger can coexist.</p>",
+                trust: 3,
+                script: [
+                    { text: "I loved her. I miss her. And I still feel <span class='keyword' data-key='Relief'>relief</span>.", keywords:["Relief"], choices:[{text:"Multiple truths can exist together.", change:2},{text:"Pick the right feeling.", change:-3},{text:"That’s complicated.", change:0}] },
+                    { text: "I keep trying to rank them. Like one feeling proves the others are fake.", keywords:[], choices:[{text:"Feelings don’t cancel each other.", change:2},{text:"Ranking keeps you stuck.", change:0},{text:"Just focus on grief.", change:-2}] },
+                    { text: "My brain calls it <span class='keyword' data-key='Ambivalence'>ambivalence</span>— but it feels like I’m ‘wrong’.", keywords:["Ambivalence"], choices:[{text:"Ambivalence is normal in grief.", change:1},{text:"It means you’re confused.", change:-1},{text:"What part feels ‘wrong’?", change:0}] },
+                    { text: "I’m learning <span class='keyword' data-key='Both/And'>both/and</span>: love AND relief can exist.", keywords:["Both/And"], choices:[{text:"That’s integration.", change:2},{text:"Say it again.", change:0},{text:"I don’t buy it.", change:-2}] },
+                    { text: "It’s an <span class='keyword' data-key='Emotional Complexity'>emotional complexity</span> thing — not a moral failure.", keywords:["Emotional Complexity"], choices:[{text:"Complex isn’t bad.", change:1},{text:"It still sounds wrong.", change:-1},{text:"What would you call it instead of ‘wrong’?", change:0}] },
+                    { text: "When <span class='keyword' data-key='Moral Judgment'>moral judgment</span> shows up, I can name it instead of obeying it.", keywords:["Moral Judgment"], choices:[{text:"Naming reduces its power.", change:1},{text:"Judgment keeps you honest.", change:-1},{text:"How does judgment talk to you?", change:0}] }
+                ],
+                formulation: [
+                    { id: 1, keys: ["Relief", "Both/And"], title: "Skill (Hold two truths)" },
+                    { id: 2, keys: ["Ambivalence", "Emotional Complexity"], title: "Normalize (Mixed emotions)" },
+                    { id: 3, keys: ["Moral Judgment", "Relief"], title: "Reframe (Emotion ≠ intention)" }
+                ],
+                outro: "Yoshita stops trying to choose a ‘correct’ emotion. He begins holding more than one truth at once."
+            },
+            {
+                id: 30, client: "Yoshita", title: "Mourning the Invisible Loss",
+                briefing: "<p><strong>Goal:</strong> Mourn his own lost childhood and long-term neglect.</p>",
+                trust: 3,
+                script: [
+                    { text: "I think I’m grieving something else too.", keywords:[], choices:[{text:"Tell me what else you lost.", change:0},{text:"That’s possible.", change:0},{text:"Grief can have layers.", change:1}] },
+                    { text: "I’m grieving the kid version of me. The one who didn’t get to be cared about.", keywords:[], choices:[{text:"That child deserves mourning too.", change:2},{text:"Your parents were busy.", change:-1},{text:"That’s dramatic.", change:-2}] },
+                    { text: "It’s a <span class='keyword' data-key='Lost Childhood'>lost childhood</span> kind of grief.", keywords:["Lost Childhood"], choices:[{text:"You’re naming a real loss.", change:1},{text:"You can make up for it now.", change:0},{text:"Everyone loses something.", change:-1}] },
+                    { text: "Because I was the <span class='keyword' data-key='Neglected Child'>neglected child</span>— and I never admitted it.", keywords:["Neglected Child"], choices:[{text:"Naming it matters.", change:1},{text:"That’s harsh.", change:-1},{text:"What stopped you from naming it?", change:0}] },
+                    { text: "I used <span class='keyword' data-key='Emotional Flatness'>emotional flatness</span> to survive, so I wouldn’t need anything.", keywords:["Emotional Flatness"], choices:[{text:"That strategy kept you going.", change:1},{text:"So stop doing it.", change:-1},{text:"What happens if you don’t go flat?", change:0}] },
+                    { text: "This feels like <span class='keyword' data-key='Delayed Mourning'>delayed mourning</span>… grief showing up years late.", keywords:["Delayed Mourning"], choices:[{text:"Yes— grief can be delayed.", change:1},{text:"That’s not real grief.", change:-2},{text:"What’s it mourning now?", change:0}] },
+                    { text: "It’s also <span class='keyword' data-key='Unseen Grief'>unseen grief</span>. No one clapped for it. No one noticed it.", keywords:["Unseen Grief"], choices:[{text:"We can witness it here.", change:2},{text:"You should move on.", change:-2},{text:"What do you wish was seen?", change:0}] }
+                ],
+                formulation: [
+                    { id: 1, keys: ["Lost Childhood", "Unseen Grief"], title: "Name (Grief for what never happened)" },
+                    { id: 2, keys: ["Delayed Mourning", "Emotional Flatness"], title: "Pattern (Numbness → late grief)" },
+                    { id: 3, keys: ["Neglected Child", "Lost Childhood"], title: "Meaning (Needs were real)" }
+                ],
+                outro: "Yoshita allows himself to mourn what never was — without competing with his sister’s suffering."
+            },
+            {
+                id: 31, client: "Yoshita", title: "Permission to Live",
+                briefing: "<p><strong>Finale:</strong> Integration — release guilt, keep love, move forward.</p>",
+                trust: 4,
+                script: [
+                    { text: "I don’t want to punish myself anymore.", keywords:[], choices:[{text:"You’re tired of the contract.", change:1},{text:"Guilt may return.", change:0},{text:"That’s weakness.", change:-3}] },
+                    { text: "I can admit I felt <span class='keyword' data-key='Relief'>relief</span>— and it doesn’t mean I didn’t love her.", keywords:["Relief"], choices:[{text:"Relief can be about pressure ending.", change:1},{text:"I don’t believe you.", change:-2},{text:"Say it again, slowly.", change:0}] },
+                    { text: "I notice the urge for <span class='keyword' data-key='Self-Punishment'>self-punishment</span>. I don’t have to obey it.", keywords:["Self-Punishment"], choices:[{text:"That’s real change.", change:2},{text:"Punishment keeps you loyal.", change:-2},{text:"What helps you not obey it?", change:0}] },
+                    { text: "And I still fear <span class='keyword' data-key='Judgment Fear'>judgment</span>. But fear doesn’t decide truth.", keywords:["Judgment Fear"], choices:[{text:"Fear can exist without steering you.", change:1},{text:"Judgment is unavoidable.", change:0},{text:"Then hide it forever.", change:-3}] },
+                    { text: "I think I’m allowed <span class='keyword' data-key='Self-Permission'>self-permission</span>— to live without paying for it.", keywords:["Self-Permission"], choices:[{text:"Yes. Permission to live.", change:2},{text:"That’s selfish.", change:-3},{text:"What does permission look like this week?", change:0}] },
+                    { text: "That’s <span class='keyword' data-key='Living Forward'>living forward</span>… not betrayal.", keywords:["Living Forward"], choices:[{text:"Exactly.", change:1},{text:"You’ll relapse.", change:-1},{text:"What would your sister want for you?", change:0}] },
+                    { text: "I can carry her with me and still have an <span class='keyword' data-key='Integrated Grief'>integrated grief</span>.", keywords:["Integrated Grief"], choices:[{text:"That’s the goal.", change:2},{text:"Grief should hurt more.", change:-2},{text:"How does integrated grief feel?", change:0}] }
+                ],
+                formulation: [
+                    { id: 1, keys: ["Self-Permission", "Living Forward"], title: "Outcome (Permission to live)" },
+                    { id: 2, keys: ["Relief", "Integrated Grief"], title: "Integration (Relief + love coexist)" },
+                    { id: 3, keys: ["Judgment Fear", "Self-Punishment"], title: "Release (Stop obeying the debt)" }
+                ],
+                outro: "Yoshita understands that relief does not erase love — and living forward is not betrayal. <br><br><strong>Case Chain:</strong> Easy Child → Funeral Silence → Relief → Guilt Contract → Suppressed Anger → Lost Childhood → Self-Permission"
+
+            },
+            // --- MIRA (32-39) ---
+            {
+                id: 32, client: "Mira", title: "The First Impression",
+                briefing: "<p><strong>Subject:</strong> Mira (20) — College student.<br><strong>Notes:</strong> Charismatic, defensive, highly image-aware.</p><p><strong>Goal:</strong> Establish boundaries: truth, accountability, and impact.</p>",
+                trust: 2,
+                script: [
+                    {
+                        text: "So… you’re the person I’m supposed to talk to. I’m not a villain. I just have a <span class='keyword' data-key='Charming Mask'>charming mask</span> when I’m nervous.",
+                        keywords: ["Charming Mask"],
+                        choices: [
+                            {text:"Let’s not debate labels—tell me what happened.", change:1},
+                            {text:"You’re trying to win me over right now.", change:0},
+                            {text:"If you’re nervous, this should be easy.", change:-1}
+                        ]
+                    },
+                    {
+                        text: "People always assume things. I like controlling my <span class='keyword' data-key='Image Control'>image</span>. That’s normal.",
+                        keywords: ["Image Control"],
+                        choices: [
+                            {text:"Image control can hide important details.", change:1},
+                            {text:"It’s normal—continue.", change:0},
+                            {text:"So you manipulate people.", change:-2}
+                        ]
+                    },
+                    {
+                        text: "I’m careful with my words. I build a <span class='keyword' data-key='Careful Narrative'>careful narrative</span> so people don’t misunderstand me.",
+                        keywords: ["Careful Narrative"],
+                        choices: [
+                            {text:"Careful narratives can protect you from consequences.", change:1},
+                            {text:"Misunderstood how? Give an example.", change:0},
+                            {text:"Sounds like lying.", change:-2}
+                        ]
+                    },
+                    {
+                        text: "Look, I’ve done things. But people exaggerate. I’m not cruel— I’m <span class='keyword' data-key='Mistaken'>mistaken</span> sometimes.",
+                        keywords: ["Mistaken"],
+                        choices: [
+                            {text:"Mistakes still have impact.", change:1},
+                            {text:"Tell me one thing you did.", change:0},
+                            {text:"Stop minimizing.", change:-1}
+                        ]
+                    }
+                ],
+                formulation: [
+                    { id:1, keys:["Charming Mask","Image Control"], title:"Presentation (Charm as camouflage)" },
+                    { id:2, keys:["Careful Narrative","Mistaken"], title:"Frame (Mistake language)" },
+                    { id:3, keys:["Image Control","Careful Narrative"], title:"Pattern (Control the story)" }
+                ],
+                outro: "Mira tests your boundaries. You anchor the session to facts, not labels."
+            },
+            {
+                id: 33, client: "Mira", title: "Just a Mistake",
+                briefing: "<p><strong>Update:</strong> First concrete incident.</p><p><strong>Goal:</strong> Separate 'mistake talk' from choice and impact.</p>",
+                trust: 2,
+                script: [
+                    {
+                        text: "Okay. In high school I ‘accidentally’ got someone isolated. People say I planned it. I didn’t. It was <span class='keyword' data-key='Mistaken'>mistaken</span>.",
+                        keywords:["Mistaken"],
+                        choices:[
+                            {text:"Walk me through the steps—what did you do first?", change:1},
+                            {text:"So you’re the victim of rumors.", change:-1},
+                            {text:"Who got hurt?", change:0}
+                        ]
+                    },
+                    {
+                        text: "I’m not downplaying it— I’m just explaining. People <span class='keyword' data-key='Minimization'>minimize</span> my side too.",
+                        keywords:["Minimization"],
+                        choices:[
+                            {text:"Notice how you used 'minimize' to avoid details.", change:1},
+                            {text:"Fair. Continue.", change:0},
+                            {text:"You’re deflecting.", change:-1}
+                        ]
+                    },
+                    {
+                        text: "I don’t remember every detail. Some parts are fuzzy. Call it <span class='keyword' data-key='Convenient Amnesia'>convenient amnesia</span> if you want.",
+                        keywords:["Convenient Amnesia"],
+                        choices:[
+                            {text:"Fuzzy usually means selected memory. What do you remember clearly?", change:1},
+                            {text:"Then we can’t talk about it.", change:-1},
+                            {text:"Okay—focus on what you do remember.", change:0}
+                        ]
+                    },
+                    {
+                        text: "Fine. I told two people ‘just facts’. I left out the parts that made me look bad. That’s <span class='keyword' data-key='Selective Detail'>selective detail</span>.",
+                        keywords:["Selective Detail"],
+                        choices:[
+                            {text:"So the story was curated.", change:1},
+                            {text:"That’s normal.", change:-1},
+                            {text:"Who did that affect?", change:0}
+                        ]
+                    },
+                    {
+                        text: "And if anyone questioned it, I’d say I never *said* that. <span class='keyword' data-key='Plausible Deniability'>Plausible deniability</span>." ,
+                        keywords:["Plausible Deniability"],
+                        choices:[
+                            {text:"That protects you, not them.", change:1},
+                            {text:"Smart.", change:-2},
+                            {text:"What happened to the person after?", change:0}
+                        ]
+                    },
+                    {
+                        text: "They stopped coming to school events. Their friends avoided them. I… didn’t think about it. That’s an <span class='keyword' data-key='Impact Blindspot'>impact blindspot</span>." ,
+                        keywords:["Impact Blindspot"],
+                        choices:[
+                            {text:"Impact exists even if you don’t think about it.", change:2},
+                            {text:"So you didn’t care.", change:-2},
+                            {text:"What did you gain?", change:0}
+                        ]
+                    }
+                ],
+                formulation:[
+                    { id:1, keys:["Careful Narrative","Selective Detail"], title:"Narrative Control (Curated reality)" },
+                    { id:2, keys:["Mistaken","Convenient Amnesia"], title:"Evasion (Accident + missing memory)" },
+                    { id:3, keys:["Minimization","Impact Blindspot"], title:"Bypass (Downplay the harm)" }
+                ],
+                outro: "Mira admits the story was curated. The focus shifts from intent to impact."
+            },
+            {
+                id: 34, client: "Mira", title: "The Victim Switch",
+                briefing: "<p><strong>Goal:</strong> Recognize role-switching: from accountable to victim.</p>",
+                trust: 2,
+                script: [
+                    {
+                        text: "You’re looking at me like I’m a monster. This is why I keep a <span class='keyword' data-key='Careful Narrative'>careful narrative</span>. People twist everything.",
+                        keywords:["Careful Narrative"],
+                        choices:[
+                            {text:"I’m not here to judge— I’m here to be accurate.", change:1},
+                            {text:"You are twisting it right now.", change:0},
+                            {text:"Maybe you are a monster.", change:-3}
+                        ]
+                    },
+                    {
+                        text: "I’m the one who gets hurt by assumptions. I end up in <span class='keyword' data-key='Victim Posture'>victim posture</span> just to survive conversations.",
+                        keywords:["Victim Posture"],
+                        choices:[
+                            {text:"Victim posture can be a strategy—let’s return to actions.", change:2},
+                            {text:"Poor you.", change:-2},
+                            {text:"Tell me what you feel right now.", change:0}
+                        ]
+                    },
+                    {
+                        text: "If someone reacts badly, I tell myself it’s their fault. I <span class='keyword' data-key='Reverse Blame'>reverse blame</span>. It keeps me clean.",
+                        keywords:["Reverse Blame"],
+                        choices:[
+                            {text:"Clean from guilt, but not from impact.", change:2},
+                            {text:"So you blame victims.", change:-2},
+                            {text:"When did you last reverse blame?", change:0}
+                        ]
+                    },
+                    {
+                        text: "Sometimes I cry just to end the conversation. Not fake— just… <span class='keyword' data-key='Selective Tears'>selective tears</span>.",
+                        keywords:["Selective Tears"],
+                        choices:[
+                            {text:"Tears can be real and still strategic.", change:1},
+                            {text:"That’s disgusting.", change:-2},
+                            {text:"What are you trying to avoid in that moment?", change:0}
+                        ]
+                    }
+                ],
+                formulation:[
+                    { id:1, keys:["Victim Posture","Reverse Blame"], title:"Switch (Avoid accountability)" },
+                    { id:2, keys:["Selective Tears","Careful Narrative"], title:"Tool (Emotion as shield)" },
+                    { id:3, keys:["Reverse Blame","Careful Narrative"], title:"Loop (Story protects self)" }
+                ],
+                outro: "Mira reveals her role-switching. You keep the frame steady: actions → effects."
+            },
+            {
+                id: 35, client: "Mira", title: "The Ledger",
+                briefing: "<p><strong>Goal:</strong> Expose transactional thinking in relationships.</p>",
+                trust: 2,
+                script: [
+                    {
+                        text: "Relationships are trades. I don’t see why people pretend otherwise. It’s <span class='keyword' data-key='Transactional Bonds'>transactional bonds</span>.",
+                        keywords:["Transactional Bonds"],
+                        choices:[
+                            {text:"Trades aren’t wrong—using people is.", change:1},
+                            {text:"So you don’t feel attached.", change:0},
+                            {text:"That’s evil.", change:-2}
+                        ]
+                    },
+                    {
+                        text: "If I help someone, I earn credit. If they cross me, I use <span class='keyword' data-key='Leverage'>leverage</span>.",
+                        keywords:["Leverage"],
+                        choices:[
+                            {text:"Credit systems turn people into objects.", change:1},
+                            {text:"Sounds efficient.", change:-2},
+                            {text:"Give me an example of leverage.", change:0}
+                        ]
+                    },
+                    {
+                        text: "I keep mental notes— <span class='keyword' data-key='Scorekeeping'>scorekeeping</span>. It tells me what I’m owed.",
+                        keywords:["Scorekeeping"],
+                        choices:[
+                            {text:"What happens when you feel owed?", change:0},
+                            {text:"That creates entitlement.", change:1},
+                            {text:"Everyone does that.", change:-1}
+                        ]
+                    },
+                    {
+                        text: "And if someone won’t cooperate, I test boundaries. Little pushes. <span class='keyword' data-key='Boundary Testing'>Boundary testing</span>." ,
+                        keywords:["Boundary Testing"],
+                        choices:[
+                            {text:"That’s where harm starts.", change:1},
+                            {text:"So you like control.", change:0},
+                            {text:"That’s just confidence.", change:-1}
+                        ]
+                    }
+                ],
+                formulation:[
+                    { id:1, keys:["Transactional Bonds","Scorekeeping"], title:"Frame (People as ledgers)" },
+                    { id:2, keys:["Leverage","Boundary Testing"], title:"Method (Pressure tactics)" },
+                    { id:3, keys:["Boundary Testing","Scorekeeping"], title:"Risk (Escalation pattern)" }
+                ],
+                outro: "Mira’s logic is consistent: trade, leverage, test. You name the pattern without shaming."
+            },
+            {
+                id: 36, client: "Mira", title: "The Missing Remorse",
+                briefing: "<p><strong>Goal:</strong> Distinguish fear of punishment from responsibility to repair.</p>",
+                trust: 2,
+                script: [
+                    {
+                        text: "When things blow up, I don’t feel much. Just… blank. <span class='keyword' data-key='Shallow Affect'>Shallow affect</span>, I guess.",
+                        keywords:["Shallow Affect"],
+                        choices:[
+                            {text:"What do you feel strongly?", change:0},
+                            {text:"Blankness doesn’t erase impact.", change:1},
+                            {text:"So you’re heartless.", change:-2}
+                        ]
+                    },
+                    {
+                        text: "But I *do* fear consequences. Losing status, losing access. That’s <span class='keyword' data-key='Consequence Fear'>consequence fear</span>." ,
+                        keywords:["Consequence Fear"],
+                        choices:[
+                            {text:"Fear of punishment isn’t the same as repair.", change:2},
+                            {text:"Good. Fear will fix you.", change:-1},
+                            {text:"What consequence scares you most?", change:0}
+                        ]
+                    },
+                    {
+                        text: "People want apologies. I can say the words, but it’s <span class='keyword' data-key='No Remorse Language'>no-remorse language</span>. It’s performance." ,
+                        keywords:["No Remorse Language"],
+                        choices:[
+                            {text:"Performance protects your image.", change:1},
+                            {text:"At least you’re honest.", change:0},
+                            {text:"Then stop talking.", change:-2}
+                        ]
+                    },
+                    {
+                        text: "You keep saying ‘repair’. Like I owe something. That sounds like <span class='keyword' data-key='Repair Debt'>repair debt</span>." ,
+                        keywords:["Repair Debt"],
+                        choices:[
+                            {text:"Repair debt is about what others lost.", change:2},
+                            {text:"You don’t owe anyone anything.", change:-2},
+                            {text:"What would repair look like?", change:0}
+                        ]
+                    }
+                ],
+                formulation:[
+                    { id:1, keys:["Consequence Fear","Repair Debt"], title:"Gap (Fear ≠ repair)" },
+                    { id:2, keys:["Shallow Affect","No Remorse Language"], title:"Signal (Words without ownership)" },
+                    { id:3, keys:["No Remorse Language","Image Control"], title:"Function (Apology as image)" }
+                ],
+                outro: "Mira can describe her pattern clearly. Now the work is: impact, repair, constraints."
+            },
+            {
+                id: 37, client: "Mira", title: "Pattern Recognition",
+                briefing: "<p><strong>Goal:</strong> Identify the repeating cycle across years.</p>",
+                trust: 2,
+                script: [
+                    {
+                        text: "When I look back, it’s repetitive. Same cycle. That’s a <span class='keyword' data-key='Pattern Loop'>pattern loop</span>." ,
+                        keywords:["Pattern Loop"],
+                        choices:[
+                            {text:"Repetition is the real confession.", change:1},
+                            {text:"So you can’t change.", change:-2},
+                            {text:"Name the steps of the loop.", change:0}
+                        ]
+                    },
+                    {
+                        text: "I meet someone. I mirror them. I get close—then I use what I learn. <span class='keyword' data-key='Recruit Use Drop'>Recruit, use, drop</span>." ,
+                        keywords:["Recruit Use Drop"],
+                        choices:[
+                            {text:"That’s the cycle we need to interrupt.", change:2},
+                            {text:"You’re proud of that.", change:-1},
+                            {text:"What do you gain at the 'use' step?", change:0}
+                        ]
+                    },
+                    {
+                        text: "And if they resist, I escalate pressure— <span class='keyword' data-key='Boundary Testing'>boundary testing</span> again." ,
+                        keywords:["Boundary Testing"],
+                        choices:[
+                            {text:"Boundary testing is your escalation switch.", change:1},
+                            {text:"That’s just flirting.", change:-2},
+                            {text:"What’s the last boundary you tested?", change:0}
+                        ]
+                    },
+                    {
+                        text: "I keep it plausible. I keep the story clean. <span class='keyword' data-key='Careful Narrative'>Careful narrative</span>— always." ,
+                        keywords:["Careful Narrative"],
+                        choices:[
+                            {text:"Narrative control keeps you safe, not them.", change:1},
+                            {text:"So stop doing it.", change:-1},
+                            {text:"What would it mean to tell the unclean truth?", change:0}
+                        ]
+                    }
+                ],
+                formulation:[
+                    { id:1, keys:["Recruit Use Drop","Pattern Loop"], title:"Cycle (Exploitative repetition)" },
+                    { id:2, keys:["Boundary Testing","Leverage"], title:"Escalation (Pressure tactics)" },
+                    { id:3, keys:["Recruit Use Drop","Transactional Bonds"], title:"Frame (People as tools)" }
+                ],
+                outro: "Mira names her cycle. Naming is not change yet— but it opens a path to constraints."
+            },
+            {
+                id: 38, client: "Mira", title: "Impact Mapping",
+                briefing: "<p><strong>Goal:</strong> Move from intent to impact. Map the trail.</p>",
+                trust: 2,
+                script: [
+                    {
+                        text: "You keep asking about harm like it’s a math problem. Fine. I can trace an <span class='keyword' data-key='Impact Trail'>impact trail</span>." ,
+                        keywords:["Impact Trail"],
+                        choices:[
+                            {text:"Yes—impact is traceable.", change:1},
+                            {text:"Say it like you mean it.", change:-1},
+                            {text:"Start with one person.", change:0}
+                        ]
+                    },
+                    {
+                        text: "But I didn’t *intend* it. I wasn’t trying to destroy anyone. That’s my <span class='keyword' data-key='Intent Shield'>intent shield</span>." ,
+                        keywords:["Intent Shield"],
+                        choices:[
+                            {text:"Intent doesn’t erase outcome.", change:2},
+                            {text:"Intent is everything.", change:-2},
+                            {text:"What outcome happened anyway?", change:0}
+                        ]
+                    },
+                    {
+                        text: "I remember names. Faces. When I actually picture them, it hits different. <span class='keyword' data-key='Names & Faces'>Names and faces</span>." ,
+                        keywords:["Names & Faces"],
+                        choices:[
+                            {text:"Good. Stay with that.", change:1},
+                            {text:"That’s manipulation.", change:-1},
+                            {text:"List two names.", change:0}
+                        ]
+                    },
+                    {
+                        text: "One of them stopped trusting anyone. Another changed schools. My 'mistake' didn’t end with me. That’s the <span class='keyword' data-key='Impact Reality'>impact reality</span>. And I can finally see my <span class='keyword' data-key='Impact Blindspot'>impact blindspot</span>." ,
+                        keywords:["Impact Reality","Impact Blindspot"],
+                        choices:[
+                            {text:"You’re finally seeing the cost.", change:2},
+                            {text:"So you ruined lives.", change:-2},
+                            {text:"What did you gain?", change:0}
+                        ]
+                    }
+                ],
+                formulation:[
+                    { id:1, keys:["Intent Shield","Impact Trail"], title:"Deflection (Intent vs outcome)" },
+                    { id:2, keys:["Names & Faces","Impact Reality"], title:"Contact (Humanize impact)" },
+                    { id:3, keys:["Impact Blindspot","Impact Reality"], title:"Shift (From blindspot to clarity)" }
+                ],
+                outro: "Mira doesn’t confess a label. She admits impact: harm exists, regardless of intent."
+            },
+            {
+                id: 39, client: "Mira", title: "No More Explanations",
+                briefing: "<p><strong>Finale:</strong> The work is no longer interpretation—it's structure.</p><p><strong>Goal:</strong> Admit impact and commit to limits without performing shame.</p>",
+                trust: 3,
+                script: [
+                    {
+                        text: "I think I finally see the trap. I always bring a story— a reason— to make things look softer. I'm done with that. <span class='keyword' data-key='No More Explanations'>No More Explanations</span>.",
+                        keywords:["No More Explanations"],
+                        choices:[
+                            {text:"Say it plainly, without a second layer.", change:1},
+                            {text:"You sound like you're still controlling the frame.", change:0},
+                            {text:"So you admit you used explanations to escape.", change:2}
+                        ]
+                    },
+                    {
+                        text: "Here’s what I can say without bargaining: my actions caused harm. That’s an <span class='keyword' data-key='Ownership Statement'>Ownership Statement</span>—not a performance, not a label.",
+                        keywords:["Ownership Statement"],
+                        choices:[
+                            {text:"Hold that sentence. No defenses.", change:2},
+                            {text:"Why does owning it feel threatening?", change:0},
+                            {text:"That sounds rehearsed.", change:-1}
+                        ]
+                    },
+                    {
+                        text: "I can't trust myself to 'feel' my way into being better. I need a <span class='keyword' data-key='Behavioral Constraint'>Behavioral Constraint</span>. A rule that blocks the old moves.",
+                        keywords:["Behavioral Constraint"],
+                        choices:[
+                            {text:"Good. Name a rule that costs you something.", change:1},
+                            {text:"Rules won't change who you are.", change:-2},
+                            {text:"Constraints are how trust gets rebuilt.", change:2}
+                        ]
+                    },
+                    {
+                        text: "Before, I only cared when consequences hit me. Now I have to think ahead— <span class='keyword' data-key='Future Cost Awareness'>Future Cost Awareness</span>. What it costs them. What it costs me to keep doing it.",
+                        keywords:["Future Cost Awareness"],
+                        choices:[
+                            {text:"Future cost is empathy-by-impact.", change:2},
+                            {text:"That sounds like fear, not care.", change:-1},
+                            {text:"Give one example of a future cost.", change:0}
+                        ]
+                    },
+                    {
+                        text: "And repair has limits. Some people don't owe me a conversation. That's a <span class='keyword' data-key='Repair Boundary'>Repair Boundary</span>—I stop chasing closure and start changing behavior.",
+                        keywords:["Repair Boundary"],
+                        choices:[
+                            {text:"Respecting boundaries is part of repair.", change:2},
+                            {text:"So you give up.", change:-2},
+                            {text:"What does repair look like without contact?", change:0}
+                        ]
+                    },
+                    {
+                        text: "So here's the list. My <span class='keyword' data-key='Non-Negotiables'>Non-Negotiables</span>. No leveraging people. No selective truth. No disappearing. If I break it, I name it and step back.",
+                        keywords:["Non-Negotiables"],
+                        choices:[
+                            {text:"That’s accountability without collapse.", change:2},
+                            {text:"You’ll find a loophole.", change:-1},
+                            {text:"Write the first non-negotiable you will practice this week.", change:0}
+                        ]
+                    }
+                ],
+                formulation:[
+                    { id:1, keys:["Ownership Statement","No More Explanations"], title:"Mode (Impact without bargaining)" },
+                    { id:2, keys:["Behavioral Constraint","Non-Negotiables"], title:"Mechanism (Limits that hold)" },
+                    { id:3, keys:["Future Cost Awareness","Repair Boundary"], title:"Maturity (Foresight & respect)" }
+                ],
+                outro: "Mira does not accept a label or perform shame. She admits impact and commits to enforceable limits. The work becomes structure, repair, and restraint."
+            }
+
+            ];
 
         // MANUAL FIXES FOR KEYWORDS
         SESSIONS[21].script[1].keywords = ["Plate", "Screamed"]; // Add Screamed
@@ -1537,14 +2238,21 @@
         function showClientMenu(client) {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
             document.getElementById('menuScreen').classList.add('active');
-            
+
             const menuTitle = document.getElementById('menuTitle');
             const sessionList = document.getElementById('sessionList');
             sessionList.innerHTML = '';
-            
+
             // RESTORED PROGRESSION SYSTEM
-            let progress = JSON.parse(localStorage.getItem('mindMenderProgress')) || { alex: 0, elena: 0, sarah: 0 };
-            
+            let progress = JSON.parse(localStorage.getItem('mindMenderProgress')) || { alex: 0, elena: 0, sarah: 0, yoshita: 0, mira: 0 };
+            // Backward-compat: older saves may not include new client keys
+            progress.alex = (progress.alex ?? 0);
+            progress.elena = (progress.elena ?? 0);
+            progress.sarah = (progress.sarah ?? 0);
+            progress.yoshita = (progress.yoshita ?? 0);
+            progress.mira = (progress.mira ?? 0);
+
+
             if (client === 'alex') {
                 menuTitle.innerText = "CLIENT 01: ALEX M.";
                 renderChapter("Chapter 1: The Workplace", 0, 3, progress.alex);
@@ -1555,11 +2263,19 @@
                 renderChapter("Chapter 2: The Recovery", 12, 15, progress.elena);
             } else if (client === 'sarah') {
                 menuTitle.innerText = "CLIENT 03: SARAH T.";
-                renderChapter("Chapter 1: The Household", 16, 19, progress.sarah); 
-                renderChapter("Chapter 2: The Exit", 20, 23, progress.sarah); 
+                renderChapter("Chapter 1: The Household", 16, 19, progress.sarah);
+                renderChapter("Chapter 2: The Exit", 20, 23, progress.sarah);
+            } else if (client === 'yoshita') {
+                menuTitle.innerText = "CLIENT 04: YOSHITA";
+                renderChapter("Chapter 1: The Grief", 24, 27, progress.yoshita);
+                renderChapter("Chapter 2: The Integration", 28, 31, progress.yoshita);
+            } else if (client === 'mira') {
+                menuTitle.innerText = "CLIENT 05: MIRA";
+                renderChapter("Chapter 1: The Mirror", 32, 35, progress.mira);
+                renderChapter("Chapter 2: The Impact", 36, 39, progress.mira);
             }
         }
-        
+
         function renderChapter(title, start, end, unlockedMax) {
             const list = document.getElementById('sessionList');
             const header = document.createElement('div');
@@ -1570,18 +2286,20 @@
             for(let i=start; i<=end; i++) {
                 const s = SESSIONS[i];
                 let btn = document.createElement('button');
-                
+
                 // Adjusting for client offset
                 let offset = 0;
-                if (start >= 16) offset = 16;
+                if (start >= 32) offset = 32;
+                else if (start >= 24) offset = 24;
+                else if (start >= 16) offset = 16;
                 else if (start >= 8) offset = 8;
-                
-                let clientProgress = unlockedMax; 
+
+                let clientProgress = unlockedMax;
                 let relativeIndex = i - offset;
-                
+
                 // UNLOCK LOGIC ACTIVE
                 let isUnlocked = relativeIndex <= clientProgress;
-                
+
                 if (isUnlocked) {
                     btn.className = 'session-btn';
                     if (relativeIndex < clientProgress) btn.classList.add('completed');
@@ -1590,16 +2308,16 @@
                     btn.className = 'session-btn locked';
                     btn.disabled = true;
                 }
-                
+
                 let sNum = relativeIndex + 1;
                 btn.innerHTML = `<span class='s-name'>SESSION ${sNum}: ${s.title.toUpperCase()}</span><span class='s-desc'>${extractGoal(s.briefing)}</span>`;
                 list.appendChild(btn);
             }
         }
-        
+
         function extractGoal(html) {
             let match = html.match(/Goal:<\/strong> (.*?)<\/p>/);
-            return match ? match[1] : "Tap to view briefing.";
+            return match ? match[1] : "Integration — release guilt, keep love, move forward.";
         }
 
         function showSelectionScreen() {
@@ -1610,9 +2328,11 @@
         function showMenu() {
              if (currSessionIdx <= 7) showClientMenu('alex');
              else if (currSessionIdx <= 15) showClientMenu('elena');
-             else showClientMenu('sarah');
+             else if (currSessionIdx <= 23) showClientMenu('sarah');
+             else if (currSessionIdx <= 31) showClientMenu('yoshita');
+             else showClientMenu('mira');
         }
-        
+
         function returnToMenu() {
              // Save progress logic can remain, but menu is unlocked anyway
              showMenu();
@@ -1635,19 +2355,21 @@
         function startGame() {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
             document.getElementById('gameScreen').classList.add('active');
-            
+
             // Calc Session Display Number
             let offset = 0;
-            if(currSessionIdx >= 16) offset = 16;
+            if (currSessionIdx >= 32) offset = 32;
+            else if (currSessionIdx >= 24) offset = 24;
+            else if(currSessionIdx >= 16) offset = 16;
             else if(currSessionIdx >= 8) offset = 8;
             let sNum = currSessionIdx - offset + 1;
 
             document.getElementById('sessionTitleDisplay').innerText = `S${sNum}`;
             document.getElementById('avatarDisplay').innerText = session.client.split(' ').map(n=>n[0]).join('');
             document.getElementById('chatLog').innerHTML = "";
-            document.getElementById('clueBoard').innerHTML = ""; 
+            document.getElementById('clueBoard').innerHTML = "";
             document.getElementById('noteCount').innerText = "0";
-            
+
             const list = document.getElementById('insightList');
             list.innerHTML = "";
             session.formulation.forEach(f => {
@@ -1688,7 +2410,7 @@
             if (cDiv) {
                 cDiv.innerHTML = "";
                 document.getElementById('choicePrompt').innerText = "CHOOSE RESPONSE";
-                
+
                 beat.choices.forEach(c => {
                     let btn = document.createElement('div');
                     btn.className = 'choice-btn';
@@ -1701,15 +2423,15 @@
 
         function makeChoice(choice, beatIdx) {
             trust += choice.change;
-            if (trust > 5) trust = 5; 
+            if (trust > 5) trust = 5;
             if (trust < 1) trust = 1;
             updateTrustUI();
 
             addMsg('therapist', choice.text);
 
-            revealRetroactive(); 
+            revealRetroactive();
             const beat = session.script[beatIdx];
-            
+
             if (beat.keywords.length > 0) {
                 if (trust >= 3) {
                     let newClue = beat.keywords.some(k => !notes.includes(k));
@@ -1767,7 +2489,7 @@
             }
 
             let match = session.formulation.find(f => f.keys.every(k => selected.includes(k)));
-            
+
             if (match) {
                 if (solved.includes(match.id)) {
                     showToast("Already Solved");
@@ -1777,7 +2499,7 @@
                     li.innerText = match.title;
                     li.classList.add('done');
                     showToast("Insight Formed!");
-                    
+
                     document.querySelectorAll('.clue-card.selected').forEach(e => e.classList.remove('selected'));
                     selected = [];
 
@@ -1799,7 +2521,7 @@
             let div = document.createElement('div');
             div.className = `msg ${role}`;
             if (id !== null) div.id = `msg-${id}`;
-            
+
             if (role === 'client') {
                 html = html.replace(/class='keyword'/g, "class='keyword hidden'");
             }
@@ -1820,12 +2542,12 @@
 
         function updateTrustUI() {
             const colors = [
-                "var(--trust-low)", "var(--trust-low)", 
-                "var(--trust-mid)", 
+                "var(--trust-low)", "var(--trust-low)",
+                "var(--trust-mid)",
                 "var(--trust-high)", "var(--trust-high)"
             ];
             const labels = ["HOSTILE", "GUARDED", "NEUTRAL", "OPEN", "TRUSTING"];
-            
+
             let pips = document.querySelectorAll('.pip');
             pips.forEach((p, i) => {
                 if (i < trust) {
@@ -1849,13 +2571,26 @@
         }
 
         function returnToMenu() {
-            let progress = JSON.parse(localStorage.getItem('mindMenderProgress')) || { alex: 0, elena: 0, sarah: 0 };
-            
+            let progress = JSON.parse(localStorage.getItem('mindMenderProgress')) || { alex: 0, elena: 0, sarah: 0, yoshita: 0, mira: 0 };
+            // Backward-compat: older saves may not include new client keys
+            progress.alex = (progress.alex ?? 0);
+            progress.elena = (progress.elena ?? 0);
+            progress.sarah = (progress.sarah ?? 0);
+            progress.yoshita = (progress.yoshita ?? 0);
+            progress.mira = (progress.mira ?? 0);
+
+
             let clientKey = 'alex';
             let relativeIdx = currSessionIdx;
 
             // Determine which client we are currently playing
-            if (currSessionIdx >= 16) {
+            if (currSessionIdx >= 32) {
+                clientKey = 'mira';
+                relativeIdx = currSessionIdx - 32;
+            } else if (currSessionIdx >= 24) {
+                clientKey = 'yoshita';
+                relativeIdx = currSessionIdx - 24;
+            } else if (currSessionIdx >= 16) {
                 clientKey = 'sarah';
                 relativeIdx = currSessionIdx - 16;
             } else if (currSessionIdx >= 8) {
@@ -1868,7 +2603,7 @@
                 progress[clientKey] = relativeIdx + 1;
                 localStorage.setItem('mindMenderProgress', JSON.stringify(progress));
             }
-            
+
             showMenu();
         }
     </script>
